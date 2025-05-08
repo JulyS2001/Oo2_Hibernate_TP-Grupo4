@@ -6,6 +6,7 @@
 		<id column="idUser" name="idUser">
 			<generator class="identity"></generator>
 		</id>
+		
 		<property name="nombre" column="nombre" type="String"></property>
 		<property name="email" column="email" type="String"></property>
 
