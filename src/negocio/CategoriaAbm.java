@@ -6,7 +6,9 @@ import datos.Categoria;
 public class CategoriaAbm {
     private CategoriaDao dao = new CategoriaDao();
 
-    public int agregarCategoria(Categoria categoria) {
+    public int agregarCategoria(String nombre) {
+    	Categoria categoria = new Categoria();
+    	categoria.setNombre(nombre);
         return dao.agregar(categoria);
     }
 

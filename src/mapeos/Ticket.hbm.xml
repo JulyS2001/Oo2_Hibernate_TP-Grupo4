@@ -13,11 +13,12 @@
 		<property name="fecha_Creacion" column="Fecha_Creacion" type="string"></property>
 		<property name="fecha_Cierre" column="Fecha_Cierre" type="string"></property>
 
-		<one-to-one name="categoria" class="datos.Categoria"></one-to-one>
-		<one-to-one name="estado" class="datos.Estado"></one-to-one>
-		<one-to-one name="prioridad" class="datos.Prioridad"></one-to-one>
+		<many-to-one name="estado" class="datos.Estado" column="idEstado" not-null="true" />
+		
+		<many-to-one name="prioridad" class="datos.Prioridad" column="idPrioridad" not-null="true" />
+		
+		<many-to-one name="categoria" class="datos.Categoria" column="idCategoria" not-null="true" />
 
-		<many-to-one name="sistema" class="datos.Sistema"
-			column="idSistema" not-null="true" />
+		<many-to-one name="sistema" class="datos.Sistema" column="idSistema" not-null="true" />
 	</class>
 </hibernate-mapping>
