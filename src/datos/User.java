@@ -1,7 +1,5 @@
 package datos;
 
-import java.util.Set;
-
 public abstract class User {
 
 	protected int idUser;
