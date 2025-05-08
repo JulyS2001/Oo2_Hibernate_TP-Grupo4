@@ -1,41 +1,34 @@
 package negocio;
 
-import dao.HibernateUtil;
+import dao.PrioridadDao;
 import datos.Prioridad;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 public class PrioridadAbm {
+    private PrioridadDao dao = new PrioridadDao();
 
-    public void agregarPrioridad(Prioridad prioridad) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        session.save(prioridad);
-        tx.commit();
-        session.close();
+    public int agregarPrioridad(Prioridad prioridad) {
+        return dao.agregar(prioridad);
+    }
+
+    public Prioridad traerPrioridad(int idPrioridad) {
+        return dao.traer(idPrioridad);
     }
 
     public void modificarPrioridad(Prioridad prioridad) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        session.update(prioridad);
-        tx.commit();
-        session.close();
+        if (dao.estaAsociadaATickets(prioridad.getIdPrioridad())) {
+            throw new RuntimeException("No se puede modificar la prioridad porque está asociada a tickets.");
+        }
+        dao.actualizar(prioridad);
     }
 
-    public void eliminarPrioridad(long idPrioridad) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        Prioridad prioridad = session.get(Prioridad.class, idPrioridad);
-        session.delete(prioridad);
-        tx.commit();
-        session.close();
-    }
-
-    public Prioridad traerPrioridad(long idPrioridad) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Prioridad prioridad = session.get(Prioridad.class, idPrioridad);
-        session.close();
-        return prioridad;
+    public void eliminarPrioridad(int idPrioridad) throws Exception {
+        if (dao.estaAsociadaATickets(idPrioridad)) {
+            throw new Exception("No se puede eliminar la prioridad porque está asociada a tickets.");
+        }
+        Prioridad prioridad = dao.traer(idPrioridad);
+        if (prioridad == null) {
+            throw new Exception("Prioridad no encontrada.");
+        }
+        dao.eliminar(prioridad);
     }
 }

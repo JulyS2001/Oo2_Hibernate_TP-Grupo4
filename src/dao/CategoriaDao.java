@@ -70,5 +70,21 @@ public class CategoriaDao {
             session.close();
         }
     }
+    
+    public boolean estaAsociadaATickets(int idCategoria) {
+        boolean asociada = false;
+        try {
+            iniciaOperacion();
+            Long cantidad = session.createQuery(
+                "select count(t) from Ticket t where t.categoria.id = :idCategoria", Long.class)
+                .setParameter("idCategoria", idCategoria)
+                .uniqueResult();
+            asociada = cantidad > 0;
+        } finally {
+            session.close();
+        }
+        return asociada;
+    }
+
 
 }

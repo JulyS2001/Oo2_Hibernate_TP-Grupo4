@@ -70,4 +70,20 @@ public class PrioridadDao {
             session.close();
         }
     }
+    
+    public boolean estaAsociadaATickets(int idPrioridad) {
+        boolean asociada = false;
+        try {
+            iniciaOperacion();
+            Long cantidad = session.createQuery(
+                "select count(t) from Ticket t where t.prioridad.id = :idPrioridad", Long.class)
+                .setParameter("idPrioridad", idPrioridad)
+                .uniqueResult();
+            asociada = cantidad > 0;
+        } finally {
+            session.close();
+        }
+        return asociada;
+    }
+
 }
