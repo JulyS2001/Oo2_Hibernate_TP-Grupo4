@@ -1,7 +1,7 @@
 package datos;
 
 public class Prioridad {
-	private long idPrioridad;
+	private int idPrioridad;
 	private String nombre;
 
 
