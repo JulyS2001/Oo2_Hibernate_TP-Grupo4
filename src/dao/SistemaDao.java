@@ -2,19 +2,16 @@ package dao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-import datos.Sistema;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
 import org.hibernate.query.Query;
-
 import datos.Ticket;
 import datos.User;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import datos.Sistema;
 
 public class SistemaDao {
 	
