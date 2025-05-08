@@ -6,7 +6,7 @@ public abstract class User {
 
 	protected int idUser;
 
-	protected String nombre;
+	protected String nombre; 
 
 	protected String email;
 

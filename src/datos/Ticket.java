@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Ticket {
 
-    private int idTicket;
+    private int idTicket; 
 
     private String titulo;
 
