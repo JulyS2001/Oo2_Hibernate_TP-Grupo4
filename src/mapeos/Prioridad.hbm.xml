@@ -6,6 +6,5 @@
 <generator class="identity" />
 </id>
 <property column="nombre" name="nombre" type ="string" />
-<one-to-one name="ticket" class="datos.Ticket" ></one-to-one>
 </class>
 </hibernate-mapping>
