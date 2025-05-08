@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<<<<<<< HEAD
 	<class name="datos.Categoria" table="categoria">
 		<id column="idCategoria" name="idCategoria">
 			<generator class="identity" />
@@ -9,12 +8,4 @@
 		<property column="nombre" name="nombre" type="string" />
 		<one-to-one name="ticket" class="datos.Ticket"></one-to-one>
 	</class>
-=======
-<class name="datos.Categoria" table="categoria">
-<id column="idCategoria" name ="idCategoria">
-<generator class="identity" />
-</id>
-<property column="nombre" name="nombre" type ="string" />
-</class>
->>>>>>> 635b02f216673f61c4ca9afa54b42776c1b55a91
 </hibernate-mapping>
