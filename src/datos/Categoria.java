@@ -1,8 +1,5 @@
 package datos;
 
-import java.util.Set;
-import java.util.HashSet;
-
 public class Categoria {
 private long idCategoria;
 private String nombre;
