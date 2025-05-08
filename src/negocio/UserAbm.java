@@ -1,10 +1,8 @@
 package negocio;
 
-import java.util.List;
 import dao.UserDao;
 import datos.User;
-import datos.Receptor;
-import datos.Emisor;
+
 
 public class UserAbm {
 	

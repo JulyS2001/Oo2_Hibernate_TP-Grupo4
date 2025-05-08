@@ -3,6 +3,8 @@ package dao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import datos.Categoria;
 import datos.Estado;
 
 
@@ -50,6 +52,17 @@ public class EstadoDao {
 			session.close();
 		}
 	}
+	
+	  public Estado traerEstado(int idEstado) {
+	        Estado objeto = null;
+	        try {
+	            iniciaOperacion();
+	            objeto = (Estado) session.get(Estado.class, idEstado);
+	        } finally {
+	            session.close();
+	        }
+	        return objeto;
+	    }
 	
 
 }
