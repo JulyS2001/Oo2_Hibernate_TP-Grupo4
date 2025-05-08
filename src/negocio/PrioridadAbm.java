@@ -1,5 +1,34 @@
 package negocio;
 
-public class PrioridadAbm {
+import dao.PrioridadDao;
+import datos.Prioridad;
 
+public class PrioridadAbm {
+    private PrioridadDao dao = new PrioridadDao();
+
+    public int agregarPrioridad(Prioridad prioridad) {
+        return dao.agregar(prioridad);
+    }
+
+    public Prioridad traerPrioridad(int idPrioridad) {
+        return dao.traer(idPrioridad);
+    }
+
+    public void modificarPrioridad(Prioridad prioridad) {
+        if (dao.estaAsociadaATickets(prioridad.getIdPrioridad())) {
+            throw new RuntimeException("No se puede modificar la prioridad porque está asociada a tickets.");
+        }
+        dao.actualizar(prioridad);
+    }
+
+    public void eliminarPrioridad(int idPrioridad) throws Exception {
+        if (dao.estaAsociadaATickets(idPrioridad)) {
+            throw new Exception("No se puede eliminar la prioridad porque está asociada a tickets.");
+        }
+        Prioridad prioridad = dao.traer(idPrioridad);
+        if (prioridad == null) {
+            throw new Exception("Prioridad no encontrada.");
+        }
+        dao.eliminar(prioridad);
+    }
 }
