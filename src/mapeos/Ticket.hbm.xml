@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration SYSTEM "hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="datos.Ticket" table="Ticket">
+      <id column="idTicket" name="idTicket">
+         <generator class="identity"></generator>
+      </id>
+      <property name="titulo" column="Titulo" type="String"></property>
+      <property name="descripcion" column="Descripcion" type="String"></property>
+      <property name="fecha_Creacion" column="Fecha_Creacion" type="String"></property>
+      <property name="fecha_Cierre" column="Fecha_Cierre" type="String"></property>
+      <one-to-one name="categoria" class="datos.Categoria" ></one-to-one>
+      <one-to-one name="estado" class="datos.Estado" ></one-to-one>
+      <one-to-one name="prioridad" class="datos.Prioridad" ></one-to-one>
+   </class>
+</hibernate-mapping>
