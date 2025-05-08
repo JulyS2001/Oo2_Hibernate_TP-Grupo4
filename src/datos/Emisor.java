@@ -1,5 +1,6 @@
 package datos;
 
-public class Emisor {
-
+public class Emisor extends User {
+	
+	public Emisor() {}
 }
