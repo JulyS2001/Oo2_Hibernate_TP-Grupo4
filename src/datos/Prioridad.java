@@ -1,8 +1,5 @@
 package datos;
 
-import java.util.Set;
-import java.util.HashSet;
-
 public class Prioridad {
 	private int idPrioridad;
 	private String nombre;
