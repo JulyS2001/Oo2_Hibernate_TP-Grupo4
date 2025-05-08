@@ -6,8 +6,8 @@ public class Receptor extends User {
 	
 	public Receptor() {}
 	
-	public Receptor(int idUser, String nombre, String email, String rol) {
-		super(idUser, nombre, email);
+	public Receptor(String nombre, String email, String rol) {
+		super(nombre, email);
 		this.rol = rol; 
 	}
 

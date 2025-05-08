@@ -1,52 +1,47 @@
 package datos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Sistema {
 
-private int idSistema;
-private List<Ticket> lstTickets;
-private List<User> lstUsers;
+	private int idSistema;
+	private Set<Ticket> lstTickets;
+	private Set<User> lstUsers;
 
-/*
-public Sistema() {
-}
-*/
+	public Sistema() {
+		super();
+		this.lstTickets = new HashSet<Ticket>();
+		this.lstUsers = new HashSet<User>();
+	}
 
-public Sistema() {
-	super();
-	this.lstTickets = new ArrayList<Ticket>();
-	this.lstUsers = new ArrayList<User>();
-}
+	public int getIdSistema() {
+		return idSistema;
+	}
 
-public int getIdSistema() {
-	return idSistema;
-}
+	public void setIdSistema(int idSistema) {
+		this.idSistema = idSistema;
+	}
 
-protected void setIdSistema(int idSistema) {
-	this.idSistema = idSistema;
-}
+	public Set<Ticket> getLstTickets() {
+		return lstTickets;
+	}
 
-public List<Ticket> getLstTickets() {
-	return lstTickets;
-}
+	public void setLstTickets(Set<Ticket> lstTickets) {
+		this.lstTickets = lstTickets;
+	}
 
-public void setLstTickets(List<Ticket> lstTickets) {
-	this.lstTickets = lstTickets;
-}
+	public Set<User> getLstUsers() {
+		return lstUsers;
+	}
 
-public List<User> getLstUsers() {
-	return lstUsers;
-}
+	public void setLstUsers(Set<User> lstUsers) {
+		this.lstUsers = lstUsers;
+	}
 
-public void setLstUsers(List<User> lstUsers) {
-	this.lstUsers = lstUsers;
-}
-
-@Override
-public String toString() {
-	return "Sistema [idSistema=" + idSistema + ", lstTickets=" + lstTickets + ", lstUsers=" + lstUsers + "]";
-}
+	@Override
+	public String toString() {
+		return "Sistema [idSistema=" + idSistema + ", lstTickets=" + lstTickets + ", lstUsers=" + lstUsers + "]";
+	}
 
 }

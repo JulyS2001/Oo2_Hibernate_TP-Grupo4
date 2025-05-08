@@ -4,126 +4,116 @@ import java.util.Date;
 
 public class Ticket {
 
-    private int idTicket; 
+	private int idTicket;
 
-    private String titulo;
+	private String titulo;
 
-    private String descripcion;
+	private String descripcion;
 
-    private Date fecha_Creacion;
+	private Date fecha_Creacion;
 
-    private Date fecha_Cierre;
-    
-   
-    private Categoria categoria;
+	private Date fecha_Cierre;
 
-  
-    private Estado estado;
+	private Categoria categoria;
 
-    
-    private Prioridad prioridad;
+	private Estado estado;
 
-    
-    private Sistema sistema;
-  
+	private Prioridad prioridad;
 
-    public Ticket() {
-    }
-    
-    
+	private Sistema sistema;
 
-    public Ticket(int idTicket, String titulo, String descripcion, Date fecha_Creacion, Date fecha_Cierre) {
+	public Ticket() {
+	}
+
+	public Ticket(String titulo, String descripcion, Date fecha_Creacion, Date fecha_Cierre) {
 		super();
-		this.idTicket = idTicket;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fecha_Creacion = fecha_Creacion;
 		this.fecha_Cierre = fecha_Cierre;
 	}
 
-
-
 	// Getters y Setters
 
-    public int getIdTicket() {
-        return idTicket;
-    }
+	public int getIdTicket() {
+		return idTicket;
+	}
 
-    public void setIdTicket(int idTicket) {
-        this.idTicket = idTicket;
-    }
+	protected void setIdTicket(int idTicket) {
+		this.idTicket = idTicket;
+	}
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
-    public Date getFecha_Creacion() {
-        return fecha_Creacion;
-    }
+	public Date getFecha_Creacion() {
+		return fecha_Creacion;
+	}
 
-    public void setFecha_Creacion(Date fecha_Creacion) {
-        this.fecha_Creacion = fecha_Creacion;
-    }
+	public void setFecha_Creacion(Date fecha_Creacion) {
+		this.fecha_Creacion = fecha_Creacion;
+	}
 
-    public Date getFecha_Cierre() {
-        return fecha_Cierre;
-    }
+	public Date getFecha_Cierre() {
+		return fecha_Cierre;
+	}
 
-    public void setFecha_Cierre(Date fecha_Cierre) {
-        this.fecha_Cierre = fecha_Cierre;
-    }
-    
-    public Categoria getCategoria() {
-        return categoria;
-    }
+	public void setFecha_Cierre(Date fecha_Cierre) {
+		this.fecha_Cierre = fecha_Cierre;
+	}
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+	public Categoria getCategoria() {
+		return categoria;
+	}
 
-    public Estado getEstado() {
-        return estado;
-    }
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
+	public Estado getEstado() {
+		return estado;
+	}
 
-    public Prioridad getPrioridad() {
-        return prioridad;
-    }
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 
-    public void setPrioridad(Prioridad prioridad) {
-        this.prioridad = prioridad;
-    }
+	public Prioridad getPrioridad() {
+		return prioridad;
+	}
 
-    public Sistema getSistema() {
-        return sistema;
-    }
+	public void setPrioridad(Prioridad prioridad) {
+		this.prioridad = prioridad;
+	}
 
-    public void setSistema(Sistema sistema) {
-        this.sistema = sistema;
-    }
+	public Sistema getSistema() {
+		return sistema;
+	}
 
+	public void setSistema(Sistema sistema) {
+		this.sistema = sistema;
+	}
 
 	@Override
 	public String toString() {
 		return "Ticket [idTicket=" + idTicket + ", titulo=" + titulo + ", descripcion=" + descripcion
-				+ ", fecha_Creacion=" + fecha_Creacion + ", fecha_Cierre=" + fecha_Cierre 
-				+ "]";
+				+ ", fecha_Creacion=" + fecha_Creacion + ", fecha_Cierre=" + fecha_Cierre + ", categoria=" + categoria
+				+ ", estado=" + estado + ", prioridad=" + prioridad + ", sistema=" + sistema + "]";
 	}
-    
-    
+
+	
+
 }
