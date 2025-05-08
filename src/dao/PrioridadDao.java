@@ -3,9 +3,7 @@ package dao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import java.util.List;
 import datos.Prioridad;           // ajusta el paquete según tu proyecto
-import util.HibernateUtil;       // ajusta el paquete de tu utilitario
 
 public class PrioridadDao {
     private static Session session;
