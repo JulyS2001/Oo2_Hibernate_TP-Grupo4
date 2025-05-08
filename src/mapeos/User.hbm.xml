@@ -2,20 +2,26 @@
 <!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name="datos.User" table="User">
-      <id column="idUser" name="idUser">
-         <generator class="identity"></generator>
-      </id>
-      <property name="nombre" column="nombre" type="String"></property>
-      <property name="email" column="email" type="String"></property>
-      
-      <joined-subclass name="datos.Emisor" table="emisor">
-        <key column="idUser"></key>
-      </joined-subclass>
-      
-      <joined-subclass name="datos.Receptor" table="Receptor">
-         <key column="idUser"></key>
-         <property name="rol" column="rol" type="String"></property>
-      </joined-subclass>
-   </class>
+	<class name="datos.User" table="User">
+		<id column="idUser" name="idUser">
+			<generator class="identity"></generator>
+		</id>
+		<property name="nombre" column="nombre" type="String"></property>
+		<property name="email" column="email" type="String"></property>
+
+
+		<many-to-one name="sistema" class="datos.Sistema"
+			column="idSistema" not-null="true" />
+
+		<joined-subclass name="datos.Emisor" table="emisor">
+			<key column="idUser"></key>
+		</joined-subclass>
+
+		<joined-subclass name="datos.Receptor" table="Receptor">
+			<key column="idUser"></key>
+			<property name="rol" column="rol" type="String"></property>
+		</joined-subclass>
+
+
+	</class>
 </hibernate-mapping>

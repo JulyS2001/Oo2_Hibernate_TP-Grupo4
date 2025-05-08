@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration SYSTEM "hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Sistema" table="sistema">
+
+		<id column="idSistema" name="idSistema">
+			<generator class="identity"></generator>
+		</id>
+
+		<set name="ticket" table="ticket" order-by="idTicket asc" inverse="true"
+			lazy="true" fetch="select">
+			<key column="idSistema" not-null="true"></key>
+			<one-to-many class="datos.Ticket" />
+		</set>
+		<set name="user" table="user" order-by="idUser asc" inverse="true"
+			lazy="true" fetch="select">
+			<key column="idSistema" not-null="true"></key>
+			<one-to-many class="datos.User" />
+		</set>
+
+
+	</class>
+</hibernate-mapping>
