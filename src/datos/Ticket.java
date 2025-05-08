@@ -25,9 +25,8 @@ public class Ticket {
 	public Ticket() {
 	}
 
-	public Ticket(int idTicket, String titulo, String descripcion, Date fecha_Creacion, Date fecha_Cierre) {
+	public Ticket(String titulo, String descripcion, Date fecha_Creacion, Date fecha_Cierre) {
 		super();
-		this.idTicket = idTicket;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fecha_Creacion = fecha_Creacion;
@@ -40,7 +39,7 @@ public class Ticket {
 		return idTicket;
 	}
 
-	public void setIdTicket(int idTicket) {
+	protected void setIdTicket(int idTicket) {
 		this.idTicket = idTicket;
 	}
 
@@ -111,7 +110,10 @@ public class Ticket {
 	@Override
 	public String toString() {
 		return "Ticket [idTicket=" + idTicket + ", titulo=" + titulo + ", descripcion=" + descripcion
-				+ ", fecha_Creacion=" + fecha_Creacion + ", fecha_Cierre=" + fecha_Cierre + "]";
+				+ ", fecha_Creacion=" + fecha_Creacion + ", fecha_Cierre=" + fecha_Cierre + ", categoria=" + categoria
+				+ ", estado=" + estado + ", prioridad=" + prioridad + ", sistema=" + sistema + "]";
 	}
+
+	
 
 }

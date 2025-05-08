@@ -1,28 +1,47 @@
 package datos;
 
 public class Categoria {
-private int idCategoria;
-private String nombre;
 
+	private int idCategoria;
+	private String nombre;
+	private Ticket ticket;
 
-public Categoria() {}
+	public Categoria() {
+	}
 
-public Categoria (String nombre) {
-	this.nombre = nombre;
-}
+	public Categoria(String nombre, Ticket ticket) {
+		super();
+		this.nombre = nombre;
+		this.ticket = ticket;
+	}
 
-public String getNombre() {
-	return nombre;
-}
+	public int getIdCategoria() {
+		return idCategoria;
+	}
 
-public void SetNombre (String nombre) {
-	this.nombre = nombre;
-}
+	public void setIdCategoria(int idCategoria) {
+		this.idCategoria = idCategoria;
+	}
 
-@Override
-public String toString() {
-	return "Categoria [idCategoria=" + idCategoria + ", nombre=" + nombre + "]";
-}
+	public String getNombre() {
+		return nombre;
+	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
+
+	@Override
+	public String toString() {
+		return "Categoria [idCategoria=" + idCategoria + ", nombre=" + nombre + ", ticket=" + ticket + "]";
+	}
 
 }

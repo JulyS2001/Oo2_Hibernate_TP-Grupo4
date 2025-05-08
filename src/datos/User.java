@@ -2,30 +2,28 @@ package datos;
 
 public abstract class User {
 
-	protected int idUser;
+	private int idUser;
 
-	protected String nombre; 
+	private String nombre;
 
-	protected String email;
+	private String email;
 
+	private Sistema sistema;
 
 	public User() {
 	}
-	
 
-	public User(int idUser, String nombre, String email) {
+	public User(String nombre, String email) {
 		super();
-		this.idUser = idUser;
 		this.nombre = nombre;
 		this.email = email;
 	}
-
 
 	public int getIdUser() {
 		return idUser;
 	}
 
-	public void setIdUser(int idUser) {
+	protected void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
 
@@ -45,11 +43,17 @@ public abstract class User {
 		this.email = email;
 	}
 
+	public Sistema getSistema() {
+		return sistema;
+	}
+
+	public void setSistema(Sistema sistema) {
+		this.sistema = sistema;
+	}
 
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + "]";
+		return "User [idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + ", sistema=" + sistema + "]";
 	}
-	
-	
+
 }

@@ -2,20 +2,21 @@
 <!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="datos.Ticket" table="Ticket">
+	<class name="datos.Ticket" table="ticket">
 
 		<id column="idTicket" name="idTicket">
 			<generator class="identity"></generator>
 		</id>
 
-		<property name="titulo" column="Titulo" type="String"></property>
-		<property name="descripcion" column="Descripcion" type="String"></property>
-		<property name="fecha_Creacion" column="Fecha_Creacion" type="String"></property>
-		<property name="fecha_Cierre" column="Fecha_Cierre" type="String"></property>
+		<property name="titulo" column="Titulo" type="string"></property>
+		<property name="descripcion" column="Descripcion" type="string"></property>
+		<property name="fecha_Creacion" column="Fecha_Creacion" type="string"></property>
+		<property name="fecha_Cierre" column="Fecha_Cierre" type="string"></property>
 
 		<one-to-one name="categoria" class="datos.Categoria"></one-to-one>
 		<one-to-one name="estado" class="datos.Estado"></one-to-one>
 		<one-to-one name="prioridad" class="datos.Prioridad"></one-to-one>
+
 		<many-to-one name="sistema" class="datos.Sistema"
 			column="idSistema" not-null="true" />
 	</class>

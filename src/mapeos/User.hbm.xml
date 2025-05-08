@@ -2,13 +2,13 @@
 <!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="datos.User" table="User">
+	<class name="datos.User" table="user">
 		<id column="idUser" name="idUser">
 			<generator class="identity"></generator>
 		</id>
 		
-		<property name="nombre" column="nombre" type="String"></property>
-		<property name="email" column="email" type="String"></property>
+		<property name="nombre" column="nombre" type="string"></property>
+		<property name="email" column="email" type="string"></property>
 
 
 		<many-to-one name="sistema" class="datos.Sistema"
@@ -20,7 +20,7 @@
 
 		<joined-subclass name="datos.Receptor" table="Receptor">
 			<key column="idUser"></key>
-			<property name="rol" column="rol" type="String"></property>
+			<property name="rol" column="rol" type="string"></property>
 		</joined-subclass>
 
 

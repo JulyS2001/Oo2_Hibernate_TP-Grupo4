@@ -7,17 +7,16 @@
 			<generator class="identity"></generator>
 		</id>
 
-		<set name="ticket" table="ticket" order-by="idTicket asc" inverse="true"
+		<set name="lstTickets" table="ticket" order-by="idTicket asc" inverse="true"
 			lazy="true" fetch="select">
 			<key column="idSistema" not-null="true"></key>
 			<one-to-many class="datos.Ticket" />
 		</set>
-		<set name="user" table="user" order-by="idUser asc" inverse="true"
+		<set name="lstUsers" table="user" order-by="idUser asc" inverse="true"
 			lazy="true" fetch="select">
 			<key column="idSistema" not-null="true"></key>
 			<one-to-many class="datos.User" />
 		</set>
-
 
 	</class>
 </hibernate-mapping>
