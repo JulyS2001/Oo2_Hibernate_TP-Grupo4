@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Categoria {
-private long idCategoria;
+private int idCategoria;
 private String nombre;
 
 

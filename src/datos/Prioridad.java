@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Prioridad {
-	private long idPrioridad;
+	private int idPrioridad;
 	private String nombre;
 
 
