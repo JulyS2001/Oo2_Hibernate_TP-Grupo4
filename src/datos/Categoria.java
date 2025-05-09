@@ -3,15 +3,15 @@ package datos;
 public class Categoria {
 
 	private int idCategoria;
-	private String nombre;
+	private String tipo;
 	private Ticket ticket;
 
 	public Categoria() {
 	}
 
-	public Categoria(String nombre, Ticket ticket) {
+	public Categoria(String tipo, Ticket ticket) {
 		super();
-		this.nombre = nombre;
+		this.tipo = tipo;
 		this.ticket = ticket;
 	}
 
@@ -19,16 +19,16 @@ public class Categoria {
 		return idCategoria;
 	}
 
-	public void setIdCategoria(int idCategoria) {
+	protected void setIdCategoria(int idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public Ticket getTicket() {
@@ -41,7 +41,7 @@ public class Categoria {
 
 	@Override
 	public String toString() {
-		return "Categoria [idCategoria=" + idCategoria + ", nombre=" + nombre + ", ticket=" + ticket + "]";
+		return "Categoria [idCategoria=" + idCategoria + ", tipo=" + tipo + ", ticket=" + ticket + "]";
 	}
-
+	
 }
