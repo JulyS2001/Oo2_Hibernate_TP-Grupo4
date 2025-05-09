@@ -8,11 +8,6 @@ import org.hibernate.query.Query;
 import datos.Ticket;
 import datos.User;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import datos.Sistema;
-
 public class SistemaDao {
 	
 	private static Session session;

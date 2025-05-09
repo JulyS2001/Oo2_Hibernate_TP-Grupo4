@@ -1,9 +1,9 @@
 package negocio;
 
+import java.util.List;
+
 import dao.TicketDao;
 import datos.Ticket;
-
-import java.util.List;
 
 public class TicketAbm {
 	
