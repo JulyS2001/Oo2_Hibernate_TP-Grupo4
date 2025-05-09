@@ -3,11 +3,12 @@ package datos;
 public class Empleado extends Usuario {
 	
 	private String rol;
+	private int legajo; 
 	
 	public Empleado() {}
 	
-	public Empleado(String nombre, String email, String rol) {
-		super(nombre, email);
+	public Empleado(String nombre, String apellido, int dni, String rol) {
+		super(nombre, apellido, dni);
 		this.rol = rol; 
 	}
 
@@ -19,10 +20,19 @@ public class Empleado extends Usuario {
 		this.rol = rol;
 	}
 
+	public int getLegajo() {
+		return legajo;
+	}
+
+	public void setLegajo(int legajo) {
+		this.legajo = legajo;
+	}
+
 	@Override
 	public String toString() {
-		return "Receptor [rol=" + rol + "]";
+		return "Empleado [rol=" + rol + ", legajo=" + legajo + "]";
 	}
+
 	
 	
 
