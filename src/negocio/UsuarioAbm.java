@@ -18,24 +18,24 @@ public class UsuarioAbm {
 		return instancia; 
 	}
 	
-	public int crearUser(Usuario u) {
-		return dao.crearUser(u);
+	public int crearUsuario(Usuario u) {
+		return dao.crearUsuario(u);
 	}
 	
-	public void eliminarUser(Usuario u) {
+	public void eliminarUsuario(Usuario u) {
 		Usuario existe = dao.traer(u.getIdUsuario());
 		if(existe == null) {
 			throw new RuntimeException("El usuaro no existe.");
 		}
-		dao.eliminarUser(u);
+		dao.eliminarUsuario(u);
 	}
 	
-	public void modificarUser(Usuario u) {
+	public void modificarUsuario(Usuario u) {
 		Usuario existe = dao.traer(u.getIdUsuario());
 		if(existe == null) {
 			throw new RuntimeException("El usuaro no existe.");
 		}
-		dao.modificarUser(u);
+		dao.modificarUsuario(u);
 	}
 	
 	public Usuario traerUser(int idUser) {
