@@ -14,9 +14,7 @@
 		<property name="fecha_Cierre" column="Fecha_Cierre" type="java.time.LocalDate"></property>
 
 		<many-to-one name="estado" class="datos.Estado" column="idEstado" not-null="true" />
-		
 		<many-to-one name="prioridad" class="datos.Prioridad" column="idPrioridad" not-null="true" />
-		
 		<many-to-one name="categoria" class="datos.Categoria" column="idCategoria" not-null="true" />
 		
 		<set name="lstActualizaciones" table="actualizacion" order-by="idActualizacion asc" inverse="true"
