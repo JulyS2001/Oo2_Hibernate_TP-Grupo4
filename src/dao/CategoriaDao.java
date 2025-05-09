@@ -71,6 +71,7 @@ public class CategoriaDao {
         }
     }
     
+    /*
     public boolean estaAsociadaATickets(int idCategoria) {
         boolean asociada = false;
         try {
@@ -85,6 +86,6 @@ public class CategoriaDao {
         }
         return asociada;
     }
-
+	*/
 
 }
