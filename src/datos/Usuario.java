@@ -1,6 +1,6 @@
 package datos;
 
-public abstract class User {
+public abstract class Usuario {
 
 	private int idUser;
 
@@ -8,15 +8,13 @@ public abstract class User {
 
 	private String email;
 
-	private Sistema sistema;
-
-	public User() {
+	public Usuario() {
 	}
 
-	public User(String nombre, String email) {
+	public Usuario(String nombre, String email) {
 		super();
 		this.nombre = nombre;
-		this.email = email;
+		this.email = email; 
 	}
 
 	public int getIdUser() {
@@ -43,17 +41,9 @@ public abstract class User {
 		this.email = email;
 	}
 
-	public Sistema getSistema() {
-		return sistema;
-	}
-
-	public void setSistema(Sistema sistema) {
-		this.sistema = sistema;
-	}
-
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + ", sistema=" + sistema + "]";
+		return "User [idUser=" + idUser + ", nombre=" + nombre + ", email=" + email +  "]";
 	}
 
 }

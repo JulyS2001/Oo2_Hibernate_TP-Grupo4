@@ -10,15 +10,20 @@
 
 		<property name="titulo" column="Titulo" type="string"></property>
 		<property name="descripcion" column="Descripcion" type="string"></property>
-		<property name="fecha_Creacion" column="Fecha_Creacion" type="string"></property>
-		<property name="fecha_Cierre" column="Fecha_Cierre" type="string"></property>
+		<property name="fecha_Creacion" column="Fecha_Creacion" type="java.time.LocalDate"></property>
+		<property name="fecha_Cierre" column="Fecha_Cierre" type="java.time.LocalDate"></property>
 
 		<many-to-one name="estado" class="datos.Estado" column="idEstado" not-null="true" />
 		
 		<many-to-one name="prioridad" class="datos.Prioridad" column="idPrioridad" not-null="true" />
 		
 		<many-to-one name="categoria" class="datos.Categoria" column="idCategoria" not-null="true" />
+		
+		<set name="lstActualizaciones" table="actualizacion" order-by="idActualizacion asc" inverse="true"
+            lazy="true" fetch="select">
+            <key column="idTicket" not-null="true"></key>
+            <one-to-many class="datos.Actualizacion" />
+        </set>
 
-		<many-to-one name="sistema" class="datos.Sistema" column="idSistema" not-null="true" />
 	</class>
 </hibernate-mapping>

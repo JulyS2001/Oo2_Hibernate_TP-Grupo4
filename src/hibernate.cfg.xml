@@ -14,8 +14,9 @@
 		<mapping resource="mapeos/Categoria.hbm.xml" />
 		<mapping resource="mapeos/Estado.hbm.xml" />
 		<mapping resource="mapeos/Prioridad.hbm.xml" />
-		<mapping resource="mapeos/Sistema.hbm.xml" />
 		<mapping resource="mapeos/Ticket.hbm.xml" />
-		<mapping resource="mapeos/User.hbm.xml" />
+		<mapping resource="mapeos/Usuario.hbm.xml" />
+		<mapping resource="mapeos/Actualizacion.hbm.xml" />
+		<mapping resource="mapeos/Contacto.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

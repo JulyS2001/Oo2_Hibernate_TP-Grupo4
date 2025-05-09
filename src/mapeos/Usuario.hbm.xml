@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="datos.Usuario" table="usuario">
+		<id column="idUsuario" name="idUsuario">
+			<generator class="identity"></generator>
+		</id>
+		
+		<property name="nombre" column="nombre" type="string"></property>
+		<property name="apellido" column="apellido" type="string"></property>
+		<property name="dni" column="dni" type="int"></property>
+		
+		<one-to-one name="contacto" class="datos.Contacto"></one-to-one>
+
+		<joined-subclass name="datos.Cliente" table="cliente">
+			<key column="user_idUser"></key>
+			<property name="nroCliente" column="nroCliente" type="int"></property>
+		</joined-subclass>
+
+		<joined-subclass name="datos.Empleado" table="empleado">
+			<key column="user_idUser"></key>
+			<property name="rol" column="rol" type="string"></property>
+			<property name="legajo" column="legajo" type="string"></property>
+			
+			<set name="lstEmpleado" table="empleado" order-by="idEmpleado asc" inverse="true"
+            lazy="true" fetch="select">
+            
+            <key column="idActualizacion" not-null="true"></key>
+            <one-to-many class="datos.Actualizacion" />
+            
+        </set>
+		</joined-subclass>
+
+
+	</class>
+</hibernate-mapping>

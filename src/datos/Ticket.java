@@ -20,8 +20,6 @@ public class Ticket {
 
 	private Prioridad prioridad;
 
-	private Sistema sistema;
-
 	public Ticket() {
 	}
 
@@ -99,19 +97,11 @@ public class Ticket {
 		this.prioridad = prioridad;
 	}
 
-	public Sistema getSistema() {
-		return sistema;
-	}
-
-	public void setSistema(Sistema sistema) {
-		this.sistema = sistema;
-	}
-
 	@Override
 	public String toString() {
 		return "Ticket [idTicket=" + idTicket + ", titulo=" + titulo + ", descripcion=" + descripcion
 				+ ", fecha_Creacion=" + fecha_Creacion + ", fecha_Cierre=" + fecha_Cierre + ", categoria=" + categoria
-				+ ", estado=" + estado + ", prioridad=" + prioridad + ", sistema=" + sistema + "]";
+				+ ", estado=" + estado + ", prioridad=" + prioridad + "]";
 	}
 
 	

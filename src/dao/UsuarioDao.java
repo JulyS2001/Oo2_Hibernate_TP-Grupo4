@@ -4,19 +4,19 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session; 
 import org.hibernate.Transaction; 
 
-import datos.User;
+import datos.Usuario;
 
-public class UserDao {
+public class UsuarioDao {
 	
 	private static Session session; 
 	private Transaction tx; 
-	private static UserDao instancia = null; 
+	private static UsuarioDao instancia = null; 
 	
-	protected UserDao() {}
+	protected UsuarioDao() {}
 	
-	public static UserDao getInstance() {
+	public static UsuarioDao getInstance() {
 		if(instancia == null)
-			instancia = new UserDao();
+			instancia = new UsuarioDao();
 		return instancia;
 	}
 	
@@ -30,7 +30,7 @@ public class UserDao {
 		throw new HibernateException("Error en la capa de acceso a datos", he);
 	}
 	
-	public int crearUser(User u) {
+	public int crearUser(Usuario u) {
 		int id = 0; 
 		try {
 			iniciaOperacion();
@@ -45,7 +45,7 @@ public class UserDao {
 		return id;
 	}
 	
-	public void eliminarUser(User u) {
+	public void eliminarUser(Usuario u) {
 		try {
 			iniciaOperacion();
 			session.delete(u);
@@ -58,7 +58,7 @@ public class UserDao {
 		}
 	}
 	
-	public void modificarUser(User u) {
+	public void modificarUser(Usuario u) {
 		try {
 			iniciaOperacion();
 			session.update(u);
@@ -71,11 +71,11 @@ public class UserDao {
 		}
 	}
 	
-	public User traer(int idUser) {
-		User u = null; 
+	public Usuario traer(int idUser) {
+		Usuario u = null; 
 		try {
 			iniciaOperacion();
-			u = (User) session.get(User.class, idUser);
+			u = (Usuario) session.get(Usuario.class, idUser);
 		}finally {
 			session.close();
 		}

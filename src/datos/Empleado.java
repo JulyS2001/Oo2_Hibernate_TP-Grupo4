@@ -1,12 +1,12 @@
 package datos;
 
-public class Receptor extends User {
+public class Empleado extends Usuario {
 	
 	private String rol;
 	
-	public Receptor() {}
+	public Empleado() {}
 	
-	public Receptor(String nombre, String email, String rol) {
+	public Empleado(String nombre, String email, String rol) {
 		super(nombre, email);
 		this.rol = rol; 
 	}
