@@ -30,7 +30,7 @@ public class UsuarioDao {
 		throw new HibernateException("Error en la capa de acceso a datos", he);
 	}
 	
-	public int crearUser(Usuario u) {
+	public int crearUsuario(Usuario u) {
 		int id = 0; 
 		try {
 			iniciaOperacion();
@@ -45,7 +45,7 @@ public class UsuarioDao {
 		return id;
 	}
 	
-	public void eliminarUser(Usuario u) {
+	public void eliminarUsuario(Usuario u) {
 		try {
 			iniciaOperacion();
 			session.delete(u);
@@ -58,7 +58,7 @@ public class UsuarioDao {
 		}
 	}
 	
-	public void modificarUser(Usuario u) {
+	public void modificarUsuario(Usuario u) {
 		try {
 			iniciaOperacion();
 			session.update(u);
