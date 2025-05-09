@@ -2,7 +2,7 @@ package datos;
 
 public abstract class Usuario {
 
-	private int idUser;
+	private int idUsuario;
 
 	private String nombre;
 
@@ -17,12 +17,12 @@ public abstract class Usuario {
 		this.email = email; 
 	}
 
-	public int getIdUser() {
-		return idUser;
+	public int getIdUsuario() {
+		return idUsuario;
 	}
 
-	protected void setIdUser(int idUser) {
-		this.idUser = idUser;
+	protected void setIdUser(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getNombre() {
@@ -33,17 +33,11 @@ public abstract class Usuario {
 		this.nombre = nombre;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", nombre=" + nombre + ", email=" + email +  "]";
+		return "User [idUsuario=" + idUsuario + ", nombre=" + nombre + ", email=" + email +  "]";
 	}
 
 }
