@@ -2,19 +2,20 @@
 <!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="datos.Categoria" table="categoria">
+	
 		<id column="idCategoria" name="idCategoria">
 			<generator class="identity" />
 		</id>
-
+		
 		<property column="tipo" name="tipo" type="string" />
+		
 		<one-to-one name="ticket" class="datos.Ticket"></one-to-one>
-
 		<property column="nombre" name="nombre" type="string" />
 		<set name="lstTickets" table="ticket" order-by="idTicket asc" inverse="true"
 			lazy="true" fetch="select">
 			<key column="idCategoria" not-null="true"></key>
 			<one-to-many class="datos.Ticket" />
 		</set>
-
+		
 	</class>
 </hibernate-mapping>

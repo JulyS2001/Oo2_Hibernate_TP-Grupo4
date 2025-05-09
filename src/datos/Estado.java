@@ -3,15 +3,16 @@ package datos;
 public class Estado {
 
 	private int idEstado;
-	private String nombre;
+	private String tipo;
 	private Ticket ticket;
 
 	public Estado() {
 	}
 
-	public Estado(String nombre) {
+	public Estado(String tipo, Ticket ticket) {
 		super();
-		this.nombre = nombre;
+		this.tipo = tipo;
+		this.ticket = ticket;
 	}
 
 	public int getIdEstado() {
@@ -22,12 +23,12 @@ public class Estado {
 		this.idEstado = idEstado;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public Ticket getTicket() {
@@ -40,9 +41,7 @@ public class Estado {
 
 	@Override
 	public String toString() {
-		return "Estado [idEstado=" + idEstado + ", nombre=" + nombre + ", ticket=" + ticket + "]";
+		return "Estado [idEstado=" + idEstado + ", tipo=" + tipo + ", ticket=" + ticket + "]";
 	}
-
 	
-
 }
