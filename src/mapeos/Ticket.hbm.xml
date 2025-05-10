@@ -12,7 +12,8 @@
 		<property name="descripcion" column="descripcion" type="string"></property>
 		<property name="fechaCreacion" column="FechaCreacion" type="java.time.LocalDateTime"></property>
 		<property name="fechaCierre" column="FechaCierre" type="java.time.LocalDateTime"></property>
-
+		
+        <many-to-one name="cliente" class="datos.Cliente" column="cliente_usuario_idUsuario"/>
 		<many-to-one name="estado" class="datos.Estado" column="idEstado" not-null="true" />
 		<many-to-one name="prioridad" class="datos.Prioridad" column="idPrioridad" not-null="true" />
 		<many-to-one name="categoria" class="datos.Categoria" column="idCategoria" not-null="true" />
