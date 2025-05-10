@@ -8,10 +8,10 @@
 			<generator class="identity"></generator>
 		</id>
 
-		<property name="titulo" column="Titulo" type="string"></property>
-		<property name="descripcion" column="Descripcion" type="string"></property>
-		<property name="fecha_Creacion" column="Fecha_Creacion" type="java.time.LocalDate"></property>
-		<property name="fecha_Cierre" column="Fecha_Cierre" type="java.time.LocalDate"></property>
+		<property name="titulo" column="titulo" type="string"></property>
+		<property name="descripcion" column="descripcion" type="string"></property>
+		<property name="fechaCreacion" column="FechaCreacion" type="java.time.LocalDateTime"></property>
+		<property name="fechaCierre" column="FechaCierre" type="java.time.LocalDateTime"></property>
 
 		<many-to-one name="estado" class="datos.Estado" column="idEstado" not-null="true" />
 		<many-to-one name="prioridad" class="datos.Prioridad" column="idPrioridad" not-null="true" />

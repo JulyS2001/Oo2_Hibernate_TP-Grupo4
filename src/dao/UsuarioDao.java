@@ -71,11 +71,11 @@ public class UsuarioDao {
 		}
 	}
 	
-	public Usuario traer(int idUser) {
+	public Usuario traer(int idUsuario) {
 		Usuario u = null; 
 		try {
 			iniciaOperacion();
-			u = (Usuario) session.get(Usuario.class, idUser);
+			u = (Usuario) session.get(Usuario.class, idUsuario);
 		}finally {
 			session.close();
 		}

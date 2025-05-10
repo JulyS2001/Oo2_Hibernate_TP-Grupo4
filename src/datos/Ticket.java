@@ -1,6 +1,6 @@
 package datos;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Ticket {
 
@@ -10,9 +10,9 @@ public class Ticket {
 
 	private String descripcion;
 
-	private Date fecha_Creacion;
+	private LocalDateTime fechaCreacion;
 
-	private Date fecha_Cierre;
+	private LocalDateTime fechaCierre;
 
 	private Categoria categoria;
 
@@ -23,12 +23,12 @@ public class Ticket {
 	public Ticket() {
 	}
 
-	public Ticket(String titulo, String descripcion, Date fecha_Creacion, Date fecha_Cierre) {
+	public Ticket(String titulo, String descripcion, LocalDateTime fechaCreacion, LocalDateTime fechaCierre) {
 		super();
 		this.titulo = titulo;
 		this.descripcion = descripcion;
-		this.fecha_Creacion = fecha_Creacion;
-		this.fecha_Cierre = fecha_Cierre;
+		this.fechaCreacion = fechaCreacion;
+		this.fechaCierre = fechaCierre;
 	}
 
 	// Getters y Setters
@@ -57,20 +57,20 @@ public class Ticket {
 		this.descripcion = descripcion;
 	}
 
-	public Date getFecha_Creacion() {
-		return fecha_Creacion;
+	public LocalDateTime getFechaCreacion() {
+		return fechaCreacion;
 	}
 
-	public void setFecha_Creacion(Date fecha_Creacion) {
-		this.fecha_Creacion = fecha_Creacion;
+	public void setFechaCreacion(LocalDateTime fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 
-	public Date getFecha_Cierre() {
-		return fecha_Cierre;
+	public LocalDateTime getFechaCierre() {
+		return fechaCierre;
 	}
 
-	public void setFecha_Cierre(Date fecha_Cierre) {
-		this.fecha_Cierre = fecha_Cierre;
+	public void setFechaCierre(LocalDateTime fechaCierre) {
+		this.fechaCierre = fechaCierre;
 	}
 
 	public Categoria getCategoria() {
@@ -100,10 +100,9 @@ public class Ticket {
 	@Override
 	public String toString() {
 		return "Ticket [idTicket=" + idTicket + ", titulo=" + titulo + ", descripcion=" + descripcion
-				+ ", fecha_Creacion=" + fecha_Creacion + ", fecha_Cierre=" + fecha_Cierre + ", categoria=" + categoria
+				+ ", fechaCreacion=" + fechaCreacion + ", fechaCierre=" + fechaCierre + ", categoria=" + categoria
 				+ ", estado=" + estado + ", prioridad=" + prioridad + "]";
 	}
 
 	
-
 }

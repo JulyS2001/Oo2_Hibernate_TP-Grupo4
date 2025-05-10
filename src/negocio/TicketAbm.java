@@ -1,6 +1,7 @@
 package negocio;
 
 import java.util.List;
+import java.time.LocalDateTime;
 
 import dao.TicketDao;
 import datos.Ticket;
@@ -17,7 +18,7 @@ public class TicketAbm {
 		Ticket ticket = new Ticket();
 		ticket.setTitulo(titulo);
 		ticket.setDescripcion(descripcion);
-		ticket.setFecha_Creacion(new java.util.Date());
+		ticket.setFechaCreacion(LocalDateTime.now());
 		
 		return ticketDao.crearTicket(ticket);
 	}

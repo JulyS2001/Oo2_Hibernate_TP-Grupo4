@@ -4,7 +4,8 @@ public class Cliente extends Usuario {
 	
 	private int nroCliente; 
 	
-	public Cliente() {}
+	public Cliente() {
+	}
 	
 	public Cliente(String nombre, String apellido, int dni, int nroCliente) {
 		super(nombre, apellido, dni);

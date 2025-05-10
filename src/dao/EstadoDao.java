@@ -19,7 +19,7 @@ public class EstadoDao {
 	    
 	    private void manejaExcepcion(HibernateException he) throws HibernateException {
 	        tx.rollback();
-	        throw new HibernateException("ERROR en la capa de acceso a datos (CategoriaDao)", he);
+	        throw new HibernateException("ERROR en la capa de acceso a datos (EstadoDao)", he);
 	    }
 	    
 

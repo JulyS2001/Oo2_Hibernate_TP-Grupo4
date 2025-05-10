@@ -8,11 +8,10 @@ public class Contacto {
     private int idContacto;
     private int numero;
     private String email;
-
-   
     private Usuario usuario;
 
-    public Contacto() {}
+    public Contacto() {
+    }
 
     public Contacto(int numero, String email) {
         this.numero = numero;

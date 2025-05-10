@@ -7,9 +7,10 @@ public class Empleado extends Usuario {
 	
 	public Empleado() {}
 	
-	public Empleado(String nombre, String apellido, int dni, String rol) {
+	public Empleado(String nombre, String apellido, int dni, String rol, int legajo) {
 		super(nombre, apellido, dni);
 		this.rol = rol; 
+		this.legajo = legajo;
 	}
 
 	public String getRol() {
