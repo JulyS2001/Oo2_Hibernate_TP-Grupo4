@@ -1,12 +1,15 @@
 package negocio;
 
 import dao.PrioridadDao;
+import datos.Categoria;
 import datos.Prioridad;
 
 public class PrioridadAbm {
     private PrioridadDao dao = new PrioridadDao();
 
-    public int agregarPrioridad(Prioridad prioridad) {
+    public int agregarPrioridad(String tipo) {
+    	Prioridad prioridad = new Prioridad();
+    	prioridad.setTipo(tipo);
         return dao.agregar(prioridad);
     }
 

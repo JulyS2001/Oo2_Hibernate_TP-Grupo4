@@ -9,8 +9,8 @@ public class TestUsuario {
 
 	public static void main(String[] args) {
 		
-		/*
-		 // Crear un Cliente
+		
+		// Crear un Cliente
         Cliente cliente = new Cliente("Juan", "Pérez", 12345678, 1001);
         
         // Crear un Empleado
@@ -26,10 +26,7 @@ public class TestUsuario {
         // Guardar Empleado
         int idEmpleado = usuarioAbm.crearUsuario(empleado);
         System.out.println("Empleado creado con ID: " + idEmpleado);
-        */
         
-		
-		UsuarioAbm usuarioAbm = UsuarioAbm.getInstance();
         
         // Traemos un Cliente por ID
         Usuario clienteRecuperado = usuarioAbm.traerUsuario(4); // 1 es el ID de usuario

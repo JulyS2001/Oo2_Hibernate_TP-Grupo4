@@ -24,20 +24,23 @@ public class EstadoDao {
 	    
 
 	
-	public int crearEstado(Estado e) {
-		int id = 0; 
-		try {
-			iniciaOperacion();
-			id = (int)session.save(e);
-			tx.commit();
-		}catch(HibernateException he) {
-			manejaExcepcion(he);
-			throw he;
-		}finally {
-			session.close();
-		}
-		return id;
-	}
+	    public int crearEstado(Estado e) {
+	        int id = 0; 
+	        try {
+	            iniciaOperacion();
+	            id = (int) session.save(e);
+	            tx.commit();  // Commit de la transacción
+	        } catch (HibernateException he) {
+	            manejaExcepcion(he);
+	            throw he;  // Rethrow de la excepción para que la capa superior pueda manejarla
+	        } finally {
+	            // Cierra la sesión solo si está abierta
+	            if (session != null && session.isOpen()) {
+	                session.close();
+	            }
+	        }
+	        return id;
+	    }
 	
 	public void actualizarEstado(Estado e) {
 		try {
