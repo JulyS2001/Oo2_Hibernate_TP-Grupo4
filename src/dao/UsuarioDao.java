@@ -5,6 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction; 
 
 import datos.Usuario;
+import datos.Empleado;
+import datos.Cliente;
 
 public class UsuarioDao {
 	
@@ -71,11 +73,14 @@ public class UsuarioDao {
 		}
 	}
 	
-	public Usuario traer(int idUsuario) {
+	public Usuario traerUsuario(int idUsuario) {
 		Usuario u = null; 
 		try {
 			iniciaOperacion();
-			u = (Usuario) session.get(Usuario.class, idUsuario);
+			u = (Usuario) session.get(Cliente.class, idUsuario);
+			if (u == null) {
+	            u = (Usuario) session.get(Empleado.class, idUsuario); // o Cliente.class
+	        }
 		}finally {
 			session.close();
 		}

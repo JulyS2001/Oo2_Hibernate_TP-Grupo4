@@ -23,7 +23,7 @@ public class UsuarioAbm {
 	}
 	
 	public void eliminarUsuario(Usuario u) {
-		Usuario existe = dao.traer(u.getIdUsuario());
+		Usuario existe = dao.traerUsuario(u.getIdUsuario());
 		if(existe == null) {
 			throw new RuntimeException("El usuario no existe.");
 		}
@@ -31,15 +31,15 @@ public class UsuarioAbm {
 	}
 	
 	public void modificarUsuario(Usuario u) {
-		Usuario existe = dao.traer(u.getIdUsuario());
+		Usuario existe = dao.traerUsuario(u.getIdUsuario());
 		if(existe == null) {
 			throw new RuntimeException("El usuario no existe.");
 		}
 		dao.modificarUsuario(u);
 	}
 	
-	public Usuario traerUser(int idUser) {
-		return dao.traer(idUser);
+	public Usuario traerUsuario(int idUsuario) {
+		return dao.traerUsuario(idUsuario);
 	}
 	
     

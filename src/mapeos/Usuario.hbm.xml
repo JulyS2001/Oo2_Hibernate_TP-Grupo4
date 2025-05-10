@@ -14,12 +14,12 @@
 		<one-to-one name="contacto" class="datos.Contacto"></one-to-one>
 
 		<joined-subclass name="datos.Cliente" table="cliente">
-			<key column="user_idUser"></key>
+			<key column="usuario_idUsuario"></key>
 			<property name="nroCliente" column="nroCliente" type="int"></property>
 		</joined-subclass>
 
 		<joined-subclass name="datos.Empleado" table="empleado">
-			<key column="user_idUser"></key>
+			<key column="usuario_idUsuario"></key>
 			<property name="rol" column="rol" type="string"></property>
 			<property name="legajo" column="legajo" type="string"></property>
 		</joined-subclass>

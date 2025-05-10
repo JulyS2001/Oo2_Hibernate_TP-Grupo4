@@ -3,11 +3,11 @@ package datos;
 public class Empleado extends Usuario {
 	
 	private String rol;
-	private int legajo; 
+	private String legajo; 
 	
 	public Empleado() {}
 	
-	public Empleado(String nombre, String apellido, int dni, String rol, int legajo) {
+	public Empleado(String nombre, String apellido, int dni, String rol, String legajo) {
 		super(nombre, apellido, dni);
 		this.rol = rol; 
 		this.legajo = legajo;
@@ -21,11 +21,11 @@ public class Empleado extends Usuario {
 		this.rol = rol;
 	}
 
-	public int getLegajo() {
+	public String getLegajo() {
 		return legajo;
 	}
 
-	public void setLegajo(int legajo) {
+	public void setLegajo(String legajo) {
 		this.legajo = legajo;
 	}
 
