@@ -7,6 +7,7 @@ public abstract class Usuario {
 	private String apellido;
 	private int dni; 
 	
+	private Contacto contacto;
 
 	public Usuario() {
 	}
@@ -49,6 +50,14 @@ public abstract class Usuario {
 
 	public void setDni(int dni) {
 		this.dni = dni;
+	}
+
+	public Contacto getContacto() {
+		return contacto;
+	}
+
+	public void setContacto(Contacto contacto) {
+		this.contacto = contacto;
 	}
 
 	@Override
