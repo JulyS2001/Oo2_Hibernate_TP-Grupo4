@@ -1,6 +1,7 @@
 package datos;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public class Ticket {
 
@@ -19,7 +20,8 @@ public class Ticket {
 	private Estado estado;
 
 	private Prioridad prioridad;
-
+	private Set<Ticket> lstTickets;
+	
 	public Ticket() {
 	}
 
@@ -96,6 +98,15 @@ public class Ticket {
 	public void setPrioridad(Prioridad prioridad) {
 		this.prioridad = prioridad;
 	}
+	
+	public Set<Ticket> getLstTickets() {
+	    return lstTickets;
+	}
+
+	public void setLstTickets(Set<Ticket> lstTickets) {
+	    this.lstTickets = lstTickets;
+	}
+
 
 	@Override
 	public String toString() {
