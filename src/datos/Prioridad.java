@@ -2,16 +2,16 @@ package datos;
 
 public class Prioridad {
 	private int idPrioridad;
-	private String nombre;
+	private String tipo;
 	private Ticket ticket;
 
 	public Prioridad() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Prioridad(String nombre, Ticket ticket) {
+	public Prioridad(String tipo, Ticket ticket) {
 		super();
-		this.nombre = nombre;
+		this.tipo = tipo;
 		this.ticket = ticket;
 	}
 
@@ -23,12 +23,12 @@ public class Prioridad {
 		this.idPrioridad = idPrioridad;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public Ticket getTicket() {
@@ -41,7 +41,7 @@ public class Prioridad {
 
 	@Override
 	public String toString() {
-		return "Prioridad [idPrioridad=" + idPrioridad + ", nombre=" + nombre + ", ticket=" + ticket + "]";
+		return "Prioridad [idPrioridad=" + idPrioridad + ", tipo=" + tipo + ", ticket=" + ticket + "]";
 	}
 	
 	}

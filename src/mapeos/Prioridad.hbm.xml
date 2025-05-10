@@ -6,10 +6,6 @@
 			<generator class="identity" />
 		</id>
 		<property column="tipo" name="tipo" type="string" />
-		<set name="lstTickets" table="ticket" order-by="idTicket asc" inverse="true"
-			lazy="true" fetch="select">
-			<key column="idPrioridad" not-null="true"></key>
-			<one-to-many class="datos.Ticket" />
-		</set>
+		
 	</class>
 </hibernate-mapping>

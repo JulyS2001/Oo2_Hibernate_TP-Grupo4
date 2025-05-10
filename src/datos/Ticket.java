@@ -21,6 +21,7 @@ public class Ticket {
 
 	private Prioridad prioridad;
 	private Set<Ticket> lstTickets;
+	private Set<Actualizacion> lstActualizaciones;
 	
 	public Ticket() {
 	}
@@ -105,6 +106,14 @@ public class Ticket {
 
 	public void setLstTickets(Set<Ticket> lstTickets) {
 	    this.lstTickets = lstTickets;
+	}
+	
+	public Set<Actualizacion> getLstActualizaciones() {
+	    return lstActualizaciones;
+	}
+
+	public void setLstActualizaciones(Set<Actualizacion> lstActualizacion) {
+	    this.lstActualizaciones = lstActualizacion;
 	}
 
 
