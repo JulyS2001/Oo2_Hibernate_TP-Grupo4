@@ -4,15 +4,13 @@ public class Estado {
 
 	private int idEstado;
 	private String tipo;
-	private Ticket ticket;
 
 	public Estado() {
 	}
 
-	public Estado(String tipo, Ticket ticket) {
+	public Estado(String tipo) {
 		super();
 		this.tipo = tipo;
-		this.ticket = ticket;
 	}
 
 	public int getIdEstado() {
@@ -31,17 +29,10 @@ public class Estado {
 		this.tipo = tipo;
 	}
 
-	public Ticket getTicket() {
-		return ticket;
-	}
-
-	public void setTicket(Ticket ticket) {
-		this.ticket = ticket;
-	}
 
 	@Override
 	public String toString() {
-		return "Estado [idEstado=" + idEstado + ", tipo=" + tipo + ", ticket=" + ticket + "]";
+		return "Estado [idEstado=" + idEstado + ", tipo=" + tipo + "]";
 	}
 	
 }
