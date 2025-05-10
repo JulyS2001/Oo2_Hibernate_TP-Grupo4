@@ -17,6 +17,10 @@ public class Contacto {
         this.numero = numero;
         this.email = email;
     }
+    
+    public void setIdContacto(int idContacto) {
+        this.idContacto = idContacto;
+    }
 
     public int getIdContacto() {
         return idContacto;
