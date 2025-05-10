@@ -1,0 +1,62 @@
+package test;
+
+import datos.Usuario;
+import datos.Cliente;
+import datos.Empleado;
+import negocio.UsuarioAbm;
+
+public class TestUsuario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/*
+		 // Crear un Cliente
+        Cliente cliente = new Cliente("Juan", "Pérez", 12345678, 1001);
+        
+        // Crear un Empleado
+        Empleado empleado = new Empleado("Ana", "Gómez", 87654321, "Manager", "12345");
+        
+        // Usar el ABM para crear los usuarios
+        UsuarioAbm usuarioAbm = UsuarioAbm.getInstance();
+        
+        // Guardar Cliente
+        int idCliente = usuarioAbm.crearUsuario(cliente);
+        System.out.println("Cliente creado con ID: " + idCliente);
+        
+        // Guardar Empleado
+        int idEmpleado = usuarioAbm.crearUsuario(empleado);
+        System.out.println("Empleado creado con ID: " + idEmpleado);
+        */
+        
+		
+		UsuarioAbm usuarioAbm = UsuarioAbm.getInstance();
+        
+        // Traemos un Cliente por ID
+        Usuario clienteRecuperado = usuarioAbm.traerUsuario(4); // 1 es el ID de usuario
+        if (clienteRecuperado != null) {
+            System.out.println("Cliente recuperado: " + clienteRecuperado);
+        }
+        
+        // Traemos un Empleado por ID
+        Usuario empleadoRecuperado = usuarioAbm.traerUsuario(5); // 2 es el ID de usuario
+        if (empleadoRecuperado != null) {
+            System.out.println("Empleado recuperado: " + empleadoRecuperado);
+        }
+        
+		
+		/*
+		
+		  Usuario usuarioAEliminar = usuarioAbm.traerUser(3);
+	        if (usuarioAEliminar != null) {
+	            usuarioAbm.eliminarUsuario(usuarioAEliminar);
+	            System.out.println("Usuario con ID " + 3 + " ha sido eliminado.");
+	        } else {
+	            System.out.println("Usuario no encontrado.");
+	        }
+	        
+	        */
+
+	}
+
+}
