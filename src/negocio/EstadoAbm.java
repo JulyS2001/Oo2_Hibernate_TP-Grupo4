@@ -1,7 +1,6 @@
 package negocio;
 
 import dao.EstadoDao;
-import datos.Categoria;
 import datos.Estado;
 
 public class EstadoAbm {
