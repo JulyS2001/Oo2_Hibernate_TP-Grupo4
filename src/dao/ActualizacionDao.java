@@ -82,9 +82,10 @@ public class ActualizacionDao {
         try {
             iniciaOperacion();
             Long cantidad = session.createQuery(
-                "select count(t) from Ticket t where t.actualizacion.id = :idActualizacion", Long.class)
-                .setParameter("idActualizacion", idActualizacion)
-                .uniqueResult();
+            		"select count(a) from Actualizacion a where a.idActualizacion = :idActualizacion and a.ticket is not null", 
+                    Long.class)
+                    .setParameter("idActualizacion", idActualizacion)
+                    .uniqueResult();
             asociada = cantidad > 0;
         } finally {
             session.close();
