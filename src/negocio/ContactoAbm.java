@@ -22,7 +22,17 @@ public class ContactoAbm {
     }
 
     public int crearContacto(int numero, String mail, Usuario usuario) {
-		// Lanzar excepción si el cliente ya tiene un contacto
+    	
+    	if (usuario == null) {
+            throw new IllegalArgumentException("El usuario no puede ser null.");
+        }
+        if (mail == null) {
+            throw new IllegalArgumentException("El email no puede estar vacío.");
+        }
+        Contacto existe = dao.traerContactoPorNumero(numero);
+        if(existe != null) {
+        	throw new IllegalArgumentException("El contacto ya existe.");
+        }
 		Contacto c = new Contacto(numero, mail, usuario);
 		return dao.crearContacto(c);
 		}

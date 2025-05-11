@@ -78,4 +78,23 @@ public class ContactoDao {
             session.close();
         }
     }
+    
+    public Contacto traerContactoPorNumero(int numero) {
+        Session session = null;
+        Contacto contacto = null;
+
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            contacto = session.createQuery("from Contacto c where c.numero = :numero", Contacto.class)
+                              .setParameter("numero", numero)
+                              .uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new HibernateException("Error al buscar el contacto por número.");
+        } finally {
+            if (session != null) session.close();
+        }
+
+        return contacto;
+    }
 }
