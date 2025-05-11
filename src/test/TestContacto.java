@@ -22,8 +22,6 @@ public class TestContacto {
 		
 		
 		System.out.println("contacto: " + contactoAbm.traerContacto(1));
-		
-		
 
 	}
 
