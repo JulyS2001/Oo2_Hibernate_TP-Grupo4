@@ -21,6 +21,7 @@ Ticket t = new Ticket();
 t.setTitulo(titulo);
 t.setDescripcion(descripcion);
 t.setFechaCreacion(LocalDateTime.now());
+t.setFechaCierre(null);
 t.setCliente(cliente);
 t.setCategoria(categoria);
 t.setPrioridad(prioridad);

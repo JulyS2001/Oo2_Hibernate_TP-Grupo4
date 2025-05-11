@@ -135,8 +135,7 @@ public class Ticket {
 	@Override
 	public String toString() {
 		return "Ticket [idTicket=" + idTicket + ", titulo=" + titulo + ", descripcion=" + descripcion
-				+ ", fechaCreacion=" + fechaCreacion + ", fechaCierre=" + fechaCierre + ", categoria=" + categoria
-				+ ", estado=" + estado + ", prioridad=" + prioridad + "]";
+				+ ", fechaCreacion=" + fechaCreacion + "]";
 	}
 
 	
