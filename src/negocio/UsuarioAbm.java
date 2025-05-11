@@ -19,6 +19,18 @@ public class UsuarioAbm {
 	}
 	
 	public int crearUsuario(Usuario u) {
+		
+		if (u == null) {
+			throw new IllegalArgumentException("El usuario no puede ser nulo.");
+		}
+		
+		Usuario existente = dao.traerUsuarioPorDni(u.getDni());
+		if (existente != null) {
+			throw new RuntimeException("Ya existe un usuario con el DNI: " + u.getDni());
+		}
+
+		
+		
 		return dao.crearUsuario(u);
 	}
 	
@@ -35,12 +47,19 @@ public class UsuarioAbm {
 		if(existe == null) {
 			throw new RuntimeException("El usuario no existe.");
 		}
+		
+		Usuario porDni = dao.traerUsuarioPorDni(u.getDni());
+		if (porDni != null && porDni.getIdUsuario() != u.getIdUsuario()) {
+			throw new RuntimeException("Ya existe otro usuario con el DNI: " + u.getDni());
+		}
 		dao.modificarUsuario(u);
 	}
 	
 	public Usuario traerUsuario(int idUsuario) {
 		return dao.traerUsuario(idUsuario);
 	}
+	
+	
 	
     
 }

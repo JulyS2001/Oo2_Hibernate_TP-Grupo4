@@ -87,6 +87,19 @@ public class UsuarioDao {
 		return u;
 	}
 	
+	public Usuario traerUsuarioPorDni(int dni) {
+		Usuario u = null; 
+		try {
+			iniciaOperacion();
+			u = (Usuario) session.createQuery("from Usuario u where u.dni = :dni")
+					.setParameter("dni", dni)
+					.uniqueResult();
+	        
+		}finally {
+			session.close();
+		}
+		return u;
+	}
 	
 	
 
