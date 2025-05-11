@@ -1,6 +1,5 @@
 package test;
 
-import jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput;
 import negocio.EstadoAbm;
 
 public class TestEstado {
