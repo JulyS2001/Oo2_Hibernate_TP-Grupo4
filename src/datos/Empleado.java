@@ -7,8 +7,8 @@ public class Empleado extends Usuario {
 	
 	public Empleado() {}
 	
-	public Empleado(String nombre, String apellido, int dni, String rol, String legajo) {
-		super(nombre, apellido, dni);
+	public Empleado(String nombre, String apellido, int dni, Contacto contacto, String rol, String legajo) {
+		super(nombre, apellido, dni, contacto);
 		this.rol = rol; 
 		this.legajo = legajo;
 	}

@@ -1,16 +1,19 @@
 package negocio;
 
 import dao.ContactoDao;
+import datos.Cliente;
 import datos.Contacto;
+import datos.Usuario;
 
 public class ContactoAbm {
 
     private static ContactoAbm instancia = null;
-    private ContactoDao dao;
-
-    protected ContactoAbm() {
-        dao = ContactoDao.getInstance();
+    private ContactoDao dao = new ContactoDao();
+    
+    public ContactoAbm() {
+        dao = ContactoDao.getInstance(); // Usar instancia única de ContactoDao
     }
+    
 
     public static ContactoAbm getInstance() {
         if (instancia == null)
@@ -18,27 +21,30 @@ public class ContactoAbm {
         return instancia;
     }
 
-    public int crear(Contacto c) {
-        return dao.crear(c);
-    }
+    public int crearContacto(int numero, String mail, Usuario usuario) {
+		// Lanzar excepción si el cliente ya tiene un contacto
+		Contacto c = new Contacto(numero, mail, usuario);
+		return dao.crearContacto(c);
+		}
+	
 
-    public void eliminar(int idContacto) {
-        Contacto c = dao.traer(idContacto);
+    public void eliminarContacto(int idContacto) {
+        Contacto c = dao.traerContacto(idContacto);
         if (c == null) {
             throw new RuntimeException("Contacto no encontrado.");
         }
-        dao.eliminar(c);
+        dao.eliminarContacto(c);
     }
 
-    public void modificar(Contacto c) {
-        Contacto existe = dao.traer(c.getIdContacto());
+    public void modificarContacto(Contacto c) {
+        Contacto existe = dao.traerContacto(c.getIdContacto());
         if (existe == null) {
             throw new RuntimeException("Contacto no encontrado.");
         }
-        dao.modificar(c);
+        dao.modificarContacto(c);
     }
 
-    public Contacto traer(int idContacto) {
-        return dao.traer(idContacto);
+    public Contacto traerContacto(int idContacto) {
+        return dao.traerContacto(idContacto);
     }
 }

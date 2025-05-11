@@ -7,6 +7,6 @@
 		</id>
 		<property column="numero" name="numero" type="int" />
 		<property column="email" name="email" type="string" />
-		<one-to-one name="usuario" class="datos.Usuario"></one-to-one>
+		<many-to-one name="usuario" class="datos.Usuario" column="usuario_idUsuario" not-null="true" fetch="join" />
 	</class>
 </hibernate-mapping>

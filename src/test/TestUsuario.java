@@ -11,10 +11,10 @@ public class TestUsuario {
 		
 		
 		// Crear un Cliente
-        Cliente cliente = new Cliente("Juan", "Pérez", 12345678, 1001);
+        Cliente cliente = new Cliente("Juan", "Pérez", 12345678, null, 1001);
         
         // Crear un Empleado
-        Empleado empleado = new Empleado("Ana", "Gómez", 87654321, "Manager", "12345");
+        Empleado empleado = new Empleado("Ana", "Gómez", 87654321, null, "Manager", "12345");
         
         // Usar el ABM para crear los usuarios
         UsuarioAbm usuarioAbm = UsuarioAbm.getInstance();

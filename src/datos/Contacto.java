@@ -13,9 +13,10 @@ public class Contacto {
     public Contacto() {
     }
 
-    public Contacto(int numero, String email) {
+    public Contacto(int numero, String email, Usuario usuario) {
         this.numero = numero;
         this.email = email;
+        this.usuario = usuario;
     }
     
     public void setIdContacto(int idContacto) {

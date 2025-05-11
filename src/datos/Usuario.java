@@ -12,11 +12,12 @@ public abstract class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(String nombre, String apellido, int dni ) {
+	public Usuario(String nombre, String apellido, int dni, Contacto contacto) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido; 
 		this.dni = dni;
+		this.contacto = contacto;
 	}
 
 

@@ -11,7 +11,7 @@
 		<property name="apellido" column="apellido" type="string"></property>
 		<property name="dni" column="dni" type="int"></property>
 		
-		<one-to-one name="contacto" class="datos.Contacto"></one-to-one>
+		<one-to-one name="contacto" class="datos.Contacto" cascade="all"></one-to-one>
 
 		<joined-subclass name="datos.Cliente" table="cliente">
 			<key column="usuario_idUsuario"></key>

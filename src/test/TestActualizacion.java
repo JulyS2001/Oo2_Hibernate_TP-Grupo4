@@ -18,28 +18,34 @@ public class TestActualizacion {
         	
         	//Trae instancias
         	Empleado empleado = (Empleado) usuarioAbm.traerUsuario(2);
-        	Ticket ticket = ticketAbm.traerTicket(1);
+        	Ticket ticket = ticketAbm.traerTicket(3);
+        	/*
         	
         	//Crea la actualizacion
         	Actualizacion actu1 = actualizacionAbm.agregarActualizacion("Se reseteo el password", empleado, ticket);
         	
         	int idActu1= actu1.getIdActualizacion();
             System.out.println("Actualización creada con ID: " + idActu1);
+            */
             
             //Traer y mostrar la actualizacion
-            Actualizacion traerActu1 = actualizacionAbm.traerActualizacion(idActu1);
+            Actualizacion traerActu1 = actualizacionAbm.traerActualizacion(1);
             System.out.println("Primer actualizacion: " + traerActu1);
             
             traerActu1.setContenido("Esperando respuesta del Cliente");
             actualizacionAbm.actualizarActualizacion(traerActu1);
-            System.out.println("Cambios realizados: "+ actualizacionAbm.traerActualizacion(idActu1));
+            System.out.println("Cambios realizados: "+ actualizacionAbm.traerActualizacion(1));
             
+            
+            /*
             //Eliminar
             actualizacionAbm.eliminarActualizacion(idActu1);
             System.out.println("Eliminada actualizacion ID "+ idActu1);
+            */
 
         	}catch (Exception e) {
                 e.printStackTrace();
             }
+            
         }
 }

@@ -12,7 +12,7 @@ public class ContactoDao {
     private Transaction tx;
     private static ContactoDao instancia = null;
 
-    protected ContactoDao() {}
+    public ContactoDao() {}
 
     public static ContactoDao getInstance() {
         if (instancia == null)
@@ -20,17 +20,17 @@ public class ContactoDao {
         return instancia;
     }
 
-    protected void iniciaOperacion() throws HibernateException {
+    private void iniciaOperacion() throws HibernateException {
         session = HibernateUtil.getSessionFactory().openSession();
         tx = session.beginTransaction();
     }
 
-    protected void manejaExcepcion(HibernateException he) throws HibernateException {
+    private void manejaExcepcion(HibernateException he) throws HibernateException {
         tx.rollback();
         throw new HibernateException("Error en la capa de acceso a datos", he);
     }
 
-    public int crear(Contacto c) {
+    public int crearContacto(Contacto c) {
         int id = 0;
         try {
             iniciaOperacion();
@@ -44,7 +44,7 @@ public class ContactoDao {
         return id;
     }
 
-    public Contacto traer(int idContacto) {
+    public Contacto traerContacto(int idContacto) {
         Contacto c = null;
         try {
             iniciaOperacion();
@@ -55,7 +55,7 @@ public class ContactoDao {
         return c;
     }
 
-    public void modificar(Contacto c) {
+    public void modificarContacto(Contacto c) {
         try {
             iniciaOperacion();
             session.update(c);
@@ -67,7 +67,7 @@ public class ContactoDao {
         }
     }
 
-    public void eliminar(Contacto c) {
+    public void eliminarContacto(Contacto c) {
         try {
             iniciaOperacion();
             session.delete(c);
