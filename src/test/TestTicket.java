@@ -26,8 +26,8 @@ public class TestTicket {
 	        // Traer instancias existentes de otros tests
 
 	        Estado estado       = estadoAbm.traerEstado(1);
-	        Prioridad prioridad = prioridadAbm.traerPrioridad(1);
-	        Categoria categoria = categoriaAbm.traerCategoria(1);
+	        Prioridad prioridad = prioridadAbm.traerPrioridad(2);
+	        Categoria categoria = categoriaAbm.traerCategoria(6);
 	        Cliente cliente     = (Cliente) usuarioAbm.traerUsuario(1);
 
 	        // Crear el ticket enlazando entidades existentes
@@ -58,10 +58,12 @@ public class TestTicket {
 	        for (Ticket t : todos) {
 	            System.out.println(t);
 	        }
+	        /*
 
 	        // Eliminar el ticket
 	        ticketAbm.eliminarTicket(idTicket);
 	        System.out.println("Eliminado ticket ID " + idTicket);
+	        */
 
 	    } catch (Exception e) {
 	        e.printStackTrace();
