@@ -18,6 +18,10 @@ public class TicketAbm {
 	public Ticket crearTicket(String titulo, String descripcion, Cliente cliente,
             Categoria categoria, Estado estado, Prioridad prioridad) {
 			Ticket t = new Ticket();
+			
+			if (titulo == null || descripcion == null || cliente == null || categoria == null || estado == null || prioridad == null) {
+			    throw new IllegalArgumentException("Todos los campos deben ser válidos.");
+			}
 			t.setTitulo(titulo);
 			t.setDescripcion(descripcion);
 			t.setFechaCreacion(LocalDateTime.now());
@@ -41,6 +45,9 @@ public class TicketAbm {
 		return ticketDao.traerTodos();
 	}
 	
+	public Ticket traerTicketYActualizaciones(int idTicket) {
+		return ticketDao.traerTicketYActualizaciones(idTicket);
+	}
 	public void actualizarTicket(Ticket ticket) throws Exception {
 		if (ticket == null || ticket.getIdTicket() <= 0) {
 			throw new Exception("Ticket inválido.");

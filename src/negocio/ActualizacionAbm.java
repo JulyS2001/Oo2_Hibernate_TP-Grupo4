@@ -23,6 +23,9 @@ public class ActualizacionAbm {
 		
 		int id = actualizacionDao.crearActualizacion(actualizacion);
 		actualizacion.setIdActualizacion(id);
+		
+	    // Agregar la actualización a la lista de actualizaciones del ticket
+	    ticket.getLstActualizaciones().add(actualizacion);
 		return actualizacion;
 	}
 
