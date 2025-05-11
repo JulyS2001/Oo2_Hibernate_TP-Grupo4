@@ -1,7 +1,6 @@
 package negocio;
 
 import dao.PrioridadDao;
-import datos.Categoria;
 import datos.Prioridad;
 
 public class PrioridadAbm {

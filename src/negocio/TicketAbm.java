@@ -9,7 +9,6 @@ import datos.Categoria;
 import datos.Estado;
 import datos.Prioridad;
 import datos.Cliente;
-import datos.Usuario;
 
 public class TicketAbm {
 	
