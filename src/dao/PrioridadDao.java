@@ -71,6 +71,22 @@ public class PrioridadDao {
         }
     }
     
+    public Prioridad traerPorTipo(String tipo) {
+        Prioridad prioridad = null;
+        try {
+            iniciaOperacion();
+            prioridad = (Prioridad) session.createQuery("from Prioridad p where p.tipo = :tipo")
+                                           .setParameter("tipo", tipo)
+                                           .uniqueResult();
+        } catch (HibernateException he) {
+            manejaExcepcion(he);
+            throw he;
+        } finally {
+            session.close();
+        }
+        return prioridad;
+    }
+    
     public boolean estaAsociadaATickets(int idPrioridad) {
         boolean asociada = false;
         try {

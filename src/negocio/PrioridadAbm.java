@@ -8,6 +8,11 @@ public class PrioridadAbm {
     private PrioridadDao dao = new PrioridadDao();
 
     public int agregarPrioridad(String tipo) {
+    	Prioridad existente = dao.traerPorTipo(tipo);
+        if (existente != null) {
+            System.out.println("Ya existe una prioridad con tipo '" + tipo + "' con ID: " + existente.getIdPrioridad());
+            return existente.getIdPrioridad();
+        }
     	Prioridad prioridad = new Prioridad();
     	prioridad.setTipo(tipo);
         return dao.agregar(prioridad);
@@ -18,6 +23,9 @@ public class PrioridadAbm {
     }
 
     public void modificarPrioridad(Prioridad prioridad) {
+    	if (dao.traer(prioridad.getIdPrioridad()) == null) {
+            throw new RuntimeException("Prioridad no encontrada.");
+        }
         if (dao.estaAsociadaATickets(prioridad.getIdPrioridad())) {
             throw new RuntimeException("No se puede modificar la prioridad porque está asociada a tickets.");
         }
