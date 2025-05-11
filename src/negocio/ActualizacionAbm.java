@@ -18,7 +18,13 @@ public class ActualizacionAbm {
 		Actualizacion actualizacion = new Actualizacion();
 		actualizacion.setContenido(contenido);
 		actualizacion.setFechaActualizacion(LocalDateTime.now());
+		if (empleado == null) {
+		    throw new Exception("El empleado no puede ser nulo.");
+		}
 		actualizacion.setEmpleado(empleado);
+		if (ticket == null) {
+		    throw new Exception("El ticket no puede ser nulo.");
+		}
 		actualizacion.setTicket(ticket);
 		
 		int id = actualizacionDao.crearActualizacion(actualizacion);
@@ -33,7 +39,10 @@ public class ActualizacionAbm {
         return actualizacionDao.traer(idActualizacion);
     }
 
-    public void actualizarActualizacion(Actualizacion actualizacion) {
+    public void actualizarActualizacion(Actualizacion actualizacion) throws Exception {
+    	if (actualizacion == null) {
+    	    throw new Exception("La actualización no puede ser nula.");
+    	}
         if (!actualizacionDao.estaAsociadaATickets(actualizacion.getIdActualizacion())) {
             throw new RuntimeException("No se puede modificar la prioridad porque no está asociada a tickets.");
         }

@@ -19,8 +19,6 @@ public class TestContacto {
 		contactoAbm.crearContacto(1122334455, "juancitoP@hotmail.com", usuario);
 		
 		System.out.println("contacto: " + contactoAbm.traerContacto(1));
-		
-		
 
 	}
 
