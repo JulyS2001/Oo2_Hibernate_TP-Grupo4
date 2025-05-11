@@ -1,5 +1,6 @@
 package test;
 
+import jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput;
 import negocio.EstadoAbm;
 
 public class TestEstado {
@@ -34,6 +35,8 @@ public class TestEstado {
 		System.out.println(eABM.traerEstado(2));
 		
 		System.out.println(eABM.traerEstado(3));
+		
+		System.out.println(eABM.traerEstado(4));
 		
 	}
 
