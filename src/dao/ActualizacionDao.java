@@ -1,6 +1,7 @@
 package dao;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.Actualizacion;
@@ -40,6 +41,10 @@ public class ActualizacionDao {
         try {
             iniciaOperacion();
             objeto = (Actualizacion) session.get(Actualizacion.class, idActualizacion);
+            if (objeto != null) {
+                Hibernate.initialize(objeto.getEmpleado());
+                Hibernate.initialize(objeto.getTicket());
+            }
         } finally {
             session.close();
         }

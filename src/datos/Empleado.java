@@ -31,10 +31,9 @@ public class Empleado extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Empleado [rol=" + rol + ", legajo=" + legajo + "]";
+	    return "Empleado {\n" +
+	           "  rol: " + rol + ",\n" +
+	           "  legajo: " + legajo + "\n" +
+	           "}";
 	}
-
-	
-	
-
 }

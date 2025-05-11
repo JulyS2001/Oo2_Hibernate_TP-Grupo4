@@ -3,6 +3,7 @@ package datos;
 import java.time.LocalDateTime;
 
 public class Actualizacion {
+	
 	private int idActualizacion;
 	private String contenido;
 	private LocalDateTime fechaActualizacion;
@@ -14,10 +15,12 @@ public class Actualizacion {
 		
 	}
 	
-	public  Actualizacion (String contenido, LocalDateTime fechaActualizacion) {
+	public  Actualizacion (String contenido, LocalDateTime fechaActualizacion, Empleado empleado, Ticket ticket) {
 		super();
 		this.contenido = contenido;
 		this.fechaActualizacion = fechaActualizacion;
+		this.empleado = empleado;
+		this.ticket = ticket;
 	}
 	
 	
@@ -53,10 +56,14 @@ public class Actualizacion {
 		this.ticket = ticket;
 	}
 
-	@Override
 	public String toString() {
-		return "Actualizacion [idActualizacion=" + idActualizacion + ", contenido=" + contenido
-				+ ", fechaActualizacion=" + fechaActualizacion + ", empleado=" + empleado + ", ticket=" + ticket + "]";
+	    return "Actualizacion {\n" +
+	           "  idActualizacion: " + idActualizacion + ",\n" +
+	           "  contenido: \"" + contenido + "\",\n" +
+	           "  fechaActualizacion: " + fechaActualizacion + ",\n" +
+	           "  empleado: " + (empleado != null ? empleado.getNombre() + " " + empleado.getApellido() : "null") + ",\n" +
+	           "  ticket: " + (ticket != null ? "ID=" + ticket.getIdTicket() + ", título=\"" + ticket.getTitulo() + "\"" : "null") + "\n" +
+	           "}";
 	}
 	
 

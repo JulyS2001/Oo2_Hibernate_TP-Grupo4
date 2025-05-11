@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.Hibernate;
 //import org.hibernate.query.Query;
 
 import datos.Ticket;
@@ -47,6 +48,17 @@ public class TicketDao {
         try {
             iniciaOperacion();
             t = session.get(Ticket.class, idTicket);
+            if (t != null) {
+                // Fuerza la carga de las asociaciones lazy
+                Hibernate.initialize(t.getCliente());
+                Hibernate.initialize(t.getPrioridad());
+                Hibernate.initialize(t.getEstado());
+                Hibernate.initialize(t.getCategoria());
+            }
+            session.getTransaction().commit();
+        } catch (RuntimeException e) {
+            session.getTransaction().rollback();
+            throw e;
         } finally {
             session.close();
         }

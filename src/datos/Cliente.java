@@ -34,8 +34,9 @@ public class Cliente extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Cliente [nroCliente=" + nroCliente + "]";
+	    return "Cliente {\n" +
+	           "  nroCliente: " + nroCliente + "\n" +
+	           "}";
 	}
-	
 	
 }

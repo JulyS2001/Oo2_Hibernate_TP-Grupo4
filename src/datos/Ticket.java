@@ -134,9 +134,17 @@ public class Ticket {
 
 	@Override
 	public String toString() {
-		return "Ticket [idTicket=" + idTicket + ", titulo=" + titulo + ", descripcion=" + descripcion
-				+ ", fechaCreacion=" + fechaCreacion + "]";
+	    return "Ticket {\n" +
+	           "  idTicket: " + idTicket + ",\n" +
+	           "  titulo: \"" + titulo + "\",\n" +
+	           "  descripcion: \"" + descripcion + "\",\n" +
+	           "  fechaCreacion: " + fechaCreacion + ",\n" +
+	           "  fechaCierre: " + fechaCierre + ",\n" +
+	           "  categoria: " + categoria + ",\n" +
+	           "  estado: " + estado + ",\n" +
+	           "  prioridad: " + prioridad + ",\n" +
+	           "  cliente: " + (cliente != null ? cliente.toString() : "null") + "\n" +
+	           "}";
 	}
-
 	
 }
