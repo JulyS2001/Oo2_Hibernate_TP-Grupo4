@@ -62,9 +62,12 @@ public abstract class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni
-				+ "]";
+	    return "Usuario {\n" +
+	           "  idUsuario: " + idUsuario + ",\n" +
+	           "  nombre: \"" + nombre + "\",\n" +
+	           "  apellido: \"" + apellido + "\",\n" +
+	           "  dni: " + dni + "\n" +
+	           "}";
 	}
-
 	
 }
