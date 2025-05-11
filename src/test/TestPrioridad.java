@@ -37,11 +37,11 @@ public class TestPrioridad {
         }
 
         // Eliminar la prioridad
-        try {
+       /* try {
             abm1.eliminarPrioridad(idAlta);
             System.out.println("Prioridad con ID " + idAlta + " eliminada correctamente.");
         } catch (Exception e) {
             System.out.println("Error al eliminar prioridad: " + e.getMessage());
-        }
+        }*/
     }
 }
