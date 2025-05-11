@@ -20,18 +20,26 @@ public class Ticket {
 	private Estado estado;
 
 	private Prioridad prioridad;
+	
 	private Set<Ticket> lstTickets;
 	private Set<Actualizacion> lstActualizaciones;
+	
+	private Cliente cliente;
 	
 	public Ticket() {
 	}
 
-	public Ticket(String titulo, String descripcion, LocalDateTime fechaCreacion, LocalDateTime fechaCierre) {
+	public Ticket(String titulo, String descripcion, LocalDateTime fechaCreacion, LocalDateTime fechaCierre, Cliente cliente, Categoria categoria, Estado estado,
+			Prioridad prioridad) {
 		super();
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fechaCreacion = fechaCreacion;
 		this.fechaCierre = fechaCierre;
+		this.categoria = categoria;
+		this.estado = estado;
+		this.prioridad = prioridad;
+		this.cliente = cliente;
 	}
 
 	// Getters y Setters
@@ -40,7 +48,7 @@ public class Ticket {
 		return idTicket;
 	}
 
-	protected void setIdTicket(int idTicket) {
+	public void setIdTicket(int idTicket) {
 		this.idTicket = idTicket;
 	}
 
@@ -116,6 +124,13 @@ public class Ticket {
 	    this.lstActualizaciones = lstActualizacion;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
 	@Override
 	public String toString() {

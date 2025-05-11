@@ -16,6 +16,10 @@
 		<joined-subclass name="datos.Cliente" table="cliente">
 			<key column="usuario_idUsuario"></key>
 			<property name="nroCliente" column="nroCliente" type="int"></property>
+    		<set name="tickets" inverse="true" cascade="all">
+        	<key column="cliente_usuario_idUsuario"/>
+        	<one-to-many class="datos.Ticket"/>
+    		</set>
 		</joined-subclass>
 
 		<joined-subclass name="datos.Empleado" table="empleado">

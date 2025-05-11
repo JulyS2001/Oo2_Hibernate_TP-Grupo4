@@ -1,8 +1,12 @@
 package datos;
 
+import java.util.Set;
+
 public class Cliente extends Usuario {
 	
 	private int nroCliente; 
+
+	private Set<Ticket> tickets;
 	
 	public Cliente() {
 	}
@@ -18,6 +22,14 @@ public class Cliente extends Usuario {
 
 	public void setNroCliente(int nroCliente) {
 		this.nroCliente = nroCliente;
+	}
+	
+	public Set<Ticket> getTickets() {
+	    return tickets;
+	}
+
+	public void setTickets(Set<Ticket> tickets) {
+	    this.tickets = tickets;
 	}
 
 	@Override
