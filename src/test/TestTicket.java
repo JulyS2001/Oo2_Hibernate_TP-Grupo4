@@ -27,7 +27,7 @@ public class TestTicket {
 
 	        Estado estado       = estadoAbm.traerEstado(1);
 	        Prioridad prioridad = prioridadAbm.traerPrioridad(2);
-	        Categoria categoria = categoriaAbm.traerCategoria(6);
+	        Categoria categoria = categoriaAbm.traerCategoria(3);
 	        Cliente cliente     = (Cliente) usuarioAbm.traerUsuario(1);
 
 	        // Crear el ticket enlazando entidades existentes
@@ -58,8 +58,11 @@ public class TestTicket {
 	        for (Ticket t : todos) {
 	            System.out.println(t);
 	        }
+	        
+	        System.out.println("Lista de actualizaciones que se realizaron en el ticket: ");
+	        ticketAbm.traerTicketYActualizaciones(idTicket);
+	        
 	        /*
-
 	        // Eliminar el ticket
 	        ticketAbm.eliminarTicket(idTicket);
 	        System.out.println("Eliminado ticket ID " + idTicket);

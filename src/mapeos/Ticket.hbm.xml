@@ -20,8 +20,8 @@
         <many-to-one name="cliente" class="datos.Cliente" column="cliente_usuario_idUsuario"/>
 
 		<set name="lstActualizaciones" table="actualizacion" order-by="idActualizacion asc" inverse="true"
-            lazy="true" fetch="select">
-            <key column="idTicket" not-null="true"></key>
+            lazy="true" fetch="select"  cascade="all-delete-orphan">
+            <key column="ticket_idTicket" not-null="true"></key>
             <one-to-many class="datos.Actualizacion" />
         </set>
 

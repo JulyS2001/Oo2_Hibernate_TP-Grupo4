@@ -6,10 +6,10 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.Hibernate;
-//import org.hibernate.query.Query;
+import org.hibernate.query.Query;
 
 import datos.Ticket;
-//import hibernate.HibernateUtil;
+
 
 public class TicketDao {
 
@@ -54,6 +54,7 @@ public class TicketDao {
                 Hibernate.initialize(t.getPrioridad());
                 Hibernate.initialize(t.getEstado());
                 Hibernate.initialize(t.getCategoria());
+                Hibernate.initialize(t.getLstActualizaciones());
             }
             session.getTransaction().commit();
         } catch (RuntimeException e) {
@@ -70,7 +71,7 @@ public class TicketDao {
         List<Ticket> lista = null;
         try {
             iniciaOperacion();
-            lista = session.createQuery("from Ticket", Ticket.class).list();
+            lista = session.createQuery("FROM Ticket t JOIN FETCH t.categoria JOIN FETCH t.estado JOIN FETCH t.prioridad", Ticket.class).list();
         } finally {
             session.close();
         }
@@ -91,6 +92,17 @@ public class TicketDao {
         }
     }
 
+    //Traer lista de actualizaciones
+    public Ticket traerTicketYActualizaciones (int idTicket) throws HibernateException{
+    	Ticket t = null;
+    	try {
+    		iniciaOperacion();
+    		String hql = "from Ticket t inner join fetch t.ticket left join fetch t.actualizaciones where t.idTicket=:idTicket";
+    		t = (Ticket) session.createQuery(hql).setParameter(idTicket, idTicket).uniqueResult();
+    	} finally {
+    		session.close();
+    	} return t;
+    }
     // Eliminar Ticket
     public void eliminar(Ticket t) {
         try {
