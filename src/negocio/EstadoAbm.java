@@ -7,7 +7,10 @@ public class EstadoAbm {
 	
 	private EstadoDao dao = new EstadoDao();
 	
-	public int crearEstado(String tipo) {
+	public int crearEstado(String tipo) throws Exception {
+		Estado estadoExistente = traerEstadoPorTipo(tipo);
+		if(estadoExistente!=null) throw new Exception ("Error: el estado ya existe, " + estadoExistente);
+		
     	Estado estado = new Estado();
     	estado.setTipo(tipo);
         return dao.crearEstado(estado);
@@ -23,6 +26,10 @@ public class EstadoAbm {
 	
 	public Estado traerEstado(int idEstado) {
 		return dao.traerEstado(idEstado);
+	}
+	
+	public Estado traerEstadoPorTipo(String tipo) {
+		return dao.traerEstadoPorTipo(tipo);
 	}
 
 }
