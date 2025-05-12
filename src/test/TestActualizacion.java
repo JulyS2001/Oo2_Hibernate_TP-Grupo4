@@ -18,7 +18,7 @@ public class TestActualizacion {
         	
         	//Trae instancias
         	Empleado empleado = (Empleado) usuarioAbm.traerUsuario(2);
-        	Ticket ticket = ticketAbm.traerTicket(3);
+        	Ticket ticket = ticketAbm.traerTicket(1);
         	/*
         	
         	//Crea la actualizacion

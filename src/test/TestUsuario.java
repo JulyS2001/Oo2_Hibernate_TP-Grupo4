@@ -34,13 +34,13 @@ public class TestUsuario {
         
         
         // Traemos un Cliente por ID
-        Usuario clienteRecuperado = usuarioAbm.traerUsuario(4); // 1 es el ID de usuario
+        Usuario clienteRecuperado = usuarioAbm.traerUsuario(1); 
         if (clienteRecuperado != null) {
             System.out.println("Cliente recuperado: " + clienteRecuperado);
         }
         
         // Traemos un Empleado por ID
-        Usuario empleadoRecuperado = usuarioAbm.traerUsuario(5); // 2 es el ID de usuario
+        Usuario empleadoRecuperado = usuarioAbm.traerUsuario(2); 
         if (empleadoRecuperado != null) {
             System.out.println("Empleado recuperado: " + empleadoRecuperado);
         }
