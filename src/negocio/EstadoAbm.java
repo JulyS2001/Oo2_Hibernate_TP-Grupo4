@@ -36,11 +36,6 @@ public class EstadoAbm {
 	}
 	
 	public Estado traerEstadoPorTipo(String tipo) {
-		Estado estado = dao.traerEstadoPorTipo(tipo);
-        if (estado == null) {
-            // Si no se encuentra el estado con el tipo proporcionado, se lanza una excepción.
-            throw new RuntimeException("Error: el estado con tipo '" + tipo + "' no existe.");
-        }
 		return dao.traerEstadoPorTipo(tipo);
 	}
 
