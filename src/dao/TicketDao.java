@@ -71,7 +71,13 @@ public class TicketDao {
         List<Ticket> lista = null;
         try {
             iniciaOperacion();
-            lista = session.createQuery("FROM Ticket t JOIN FETCH t.categoria JOIN FETCH t.estado JOIN FETCH t.prioridad", Ticket.class).list();
+            lista = session.createQuery("FROM Ticket t " +
+                    "JOIN FETCH t.categoria " +
+                    "JOIN FETCH t.estado " +
+                    "JOIN FETCH t.prioridad " +
+                    "LEFT JOIN FETCH t.lstActualizaciones " +
+                    "JOIN FETCH t.cliente", Ticket.class).list();
+
         } finally {
             session.close();
         }
@@ -97,7 +103,7 @@ public class TicketDao {
     	Ticket t = null;
     	try {
     		iniciaOperacion();
-    		String hql = "from Ticket t inner join fetch t.ticket left join fetch t.actualizaciones where t.idTicket=:idTicket";
+    		String hql = "from Ticket t left join fetch t.lstActualizaciones where t.idTicket=:idTicket";
     		t = (Ticket) session.createQuery(hql).setParameter(idTicket, idTicket).uniqueResult();
     	} finally {
     		session.close();
