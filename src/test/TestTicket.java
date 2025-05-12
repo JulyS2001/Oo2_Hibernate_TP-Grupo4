@@ -25,7 +25,7 @@ public class TestTicket {
 
 			// Traer instancias existentes de otros tests
 
-			Estado estado = estadoAbm.traerEstado(1);
+			Estado estado = estadoAbm.traerEstado(2);
 			Prioridad prioridad = prioridadAbm.traerPrioridad(2);
 			Categoria categoria = categoriaAbm.traerCategoria(3);
 			Cliente cliente = (Cliente) usuarioAbm.traerUsuario(1);
@@ -63,10 +63,9 @@ public class TestTicket {
 			System.out.println("Lista de actualizaciones que se realizaron en el ticket: ");
 			ticketAbm.traerTicketYActualizaciones(idTicket);
 
-			/*
-			 * // Eliminar el ticket ticketAbm.eliminarTicket(idTicket);
-			 * System.out.println("Eliminado ticket ID " + idTicket);
-			 */
+			//Eliminar el ticket ticketAbm.eliminarTicket(idTicket);
+			 //System.out.println("Eliminado ticket ID " + idTicket);
+			 
 
 		} catch (Exception e) {
 			e.printStackTrace();
