@@ -103,8 +103,8 @@ public class TicketDao {
     	Ticket t = null;
     	try {
     		iniciaOperacion();
-    		String hql = "from Ticket t left join fetch t.lstActualizaciones where t.idTicket=:idTicket";
-    		t = (Ticket) session.createQuery(hql).setParameter(idTicket, idTicket).uniqueResult();
+            String hql = "from Ticket t left join fetch t.lstActualizaciones a left join fetch a.empleado where t.idTicket = :idTicket";
+    		t = (Ticket) session.createQuery(hql).setParameter("idTicket", idTicket).uniqueResult();
     	} finally {
     		session.close();
     	} return t;

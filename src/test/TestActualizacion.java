@@ -32,11 +32,10 @@ public class TestActualizacion {
             Actualizacion traerActu1 = actualizacionAbm.traerActualizacion(1);
             System.out.println("Primer actualizacion: " + traerActu1);
             
-            /*
             traerActu1.setContenido("Esperando respuesta del Cliente");
             actualizacionAbm.actualizarActualizacion(traerActu1);
             System.out.println("Cambios realizados: "+ actualizacionAbm.traerActualizacion(1));
-            */
+            
             
             /*
             //Eliminar

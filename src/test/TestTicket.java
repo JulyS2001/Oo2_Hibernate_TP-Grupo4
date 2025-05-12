@@ -10,6 +10,7 @@ import negocio.PrioridadAbm;
 import negocio.CategoriaAbm;
 import negocio.UsuarioAbm;
 import negocio.TicketAbm;
+import datos.Actualizacion;
 
 import java.util.List;
 
@@ -25,11 +26,9 @@ public class TestTicket {
 
 			// Traer instancias existentes de otros tests
 
-
-			Estado estado = estadoAbm.traerEstado(1);
-			Prioridad prioridad = prioridadAbm.traerPrioridad(1);
-			Categoria categoria = categoriaAbm.traerCategoria(1);
-
+			Estado estado = estadoAbm.traerEstado(2);
+			Prioridad prioridad = prioridadAbm.traerPrioridad(2);
+			Categoria categoria = categoriaAbm.traerCategoria(3);
 			Cliente cliente = (Cliente) usuarioAbm.traerUsuario(1);
 
 			// Crear el ticket enlazando entidades existentes
@@ -62,8 +61,16 @@ public class TestTicket {
 				System.out.println(t);
 			}
 
+			Ticket ticketConActus = ticketAbm.traerTicketYActualizaciones(idTicket);
 			System.out.println("Lista de actualizaciones que se realizaron en el ticket: ");
-			ticketAbm.traerTicketYActualizaciones(idTicket);
+			if (ticketConActus.getLstActualizaciones() != null && !ticketConActus.getLstActualizaciones().isEmpty()) {
+				for (Actualizacion actu : ticketConActus.getLstActualizaciones()) {
+					System.out.println(actu);
+				}
+			} else {
+				System.out.println("No hay actualizaciones para este ticket.");
+			}
+			
 
 			//Eliminar el ticket ticketAbm.eliminarTicket(idTicket);
 			 //System.out.println("Eliminado ticket ID " + idTicket);
