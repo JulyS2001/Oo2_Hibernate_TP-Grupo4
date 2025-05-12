@@ -26,6 +26,8 @@ public class TestPrioridad {
         } else {
             System.out.println("No se encontró la prioridad con ID: " + idAlta);
         }
+        
+        /*
 
         // Modificar la prioridad
         prioridad.setTipo("Muy Alta");
@@ -42,6 +44,7 @@ public class TestPrioridad {
             System.out.println("Prioridad con ID " + idAlta + " eliminada correctamente.");
         } catch (Exception e) {
             System.out.println("Error al eliminar prioridad: " + e.getMessage());
-        }                                             
+        }
+        */                                             
     } 
 }

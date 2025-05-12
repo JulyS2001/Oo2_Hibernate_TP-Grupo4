@@ -20,12 +20,17 @@ public class TestUsuario {
         UsuarioAbm usuarioAbm = UsuarioAbm.getInstance();
         
         // Guardar Cliente
+        
+        try {
         int idCliente = usuarioAbm.crearUsuario(cliente);
         System.out.println("Cliente creado con ID: " + idCliente);
         
         // Guardar Empleado
         int idEmpleado = usuarioAbm.crearUsuario(empleado);
         System.out.println("Empleado creado con ID: " + idEmpleado);
+        }catch(Exception e) {
+        	System.out.println(e.getMessage());
+        }
         
         
         // Traemos un Cliente por ID

@@ -12,7 +12,7 @@ public class TestContacto {
 		
 		
 		UsuarioAbm usuarioAbm = UsuarioAbm.getInstance();
-		Usuario usuario = usuarioAbm.traerUsuario(1);
+		Usuario usuario = usuarioAbm.traerUsuario(5);
 		System.out.println("Usuario: " + usuario);
 		System.out.println(usuario.getIdUsuario());
 		
